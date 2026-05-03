@@ -13,6 +13,7 @@
     --noir-dark: #ffffff; /* System White */
     --noir-accent: #0000aa; /* Classic BIOS Blue */
     --noir-magenta: #00aaaa; /* Cyan secondary */
+    --win-grey: #dfdfdf; /* Classic Window Grey */
 }
 
 body.noir-persona {
@@ -306,26 +307,54 @@ body.noir-persona .lab-section {
 }
 
 .card {
-    background: var(--agency-white);
-    border: var(--border-double);
-    padding: 2rem;
+    background: #fff;
+    border: 1px solid #000;
+    padding: 0;
     text-align: left;
-    box-shadow: 12px 12px 0px var(--agency-black);
+    box-shadow: 4px 4px 0px rgba(0,0,0,0.1);
     display: flex;
     flex-direction: column;
-    min-height: 480px;
-    transition: all 0.2s steps(4); /* Blocky transition */
+    min-height: 400px;
+    transition: all 0.1s steps(2);
     cursor: crosshair;
     position: relative;
     overflow: hidden;
 }
 
-.card:hover {
-    transform: translate(-6px, -6px);
-    box-shadow: 18px 18px 0px var(--agency-blue);
-    border-color: var(--agency-blue);
+/* Window Title Bar */
+.card::before {
+    content: "FILE_INFO.SYS [X]";
+    display: block;
     background: var(--agency-blue);
     color: #fff;
+    padding: 4px 10px;
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    border-bottom: 1px solid #000;
+    text-align: right;
+}
+
+.card-content {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--agency-blue);
+    background: #f0f0f0;
+}
+
+.ascii-art {
+    font-family: monospace;
+    white-space: pre;
+    font-size: 0.8rem;
+    line-height: 1;
+    color: var(--agency-blue);
+    margin-bottom: 2rem;
+    image-rendering: pixelated;
 }
 
 .card:hover h3, .card:hover p, .card:hover a {

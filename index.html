@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE PORTFOLIO | I just do things.</title>
-    <meta name="description" content="A portfolio of a guy who does way too many things at once.">
+    <title>JUST.ME | Polymath Portfolio</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
@@ -13,6 +12,7 @@
 </head>
 <body>
     <div id="xp-counter" class="xp-counter">LVL 1 | XP 0</div>
+    <div id="snark-popup" class="snark-popup"></div>
 
     <nav>
         <div class="logo">JUST.ME</div>
@@ -21,27 +21,35 @@
             <li><a href="#skills">The Stuffs</a></li>
             <li><a href="#project-lab">The Lab</a></li>
             <li><a href="#contact">The Signal</a></li>
+            <li><button class="nav-btn" id="plans-btn">Hire Me (Or Don't)</button></li>
         </ul>
-        <div style="display: flex; gap: 10px; align-items: center;">
-            <a href="https://github.com/pancak00" target="_blank" class="nav-btn" style="text-decoration: none; background: var(--agency-yellow);">GitHub</a>
-            <a href="https://www.linkedin.com/in/harold-nabua-ab9206379" target="_blank" class="nav-btn" style="text-decoration: none; background: var(--agency-pink);">LinkedIn</a>
-            <a href="https://profile.indeed.com/?hl=en_PH&co=PH&from=gnav-passport--passport-webapp" target="_blank" class="nav-btn" style="text-decoration: none; background: var(--agency-yellow);">Indeed</a>
-            <a href="https://www.instagram.com/dlora00/" target="_blank" class="nav-btn" style="text-decoration: none; background: var(--agency-pink);">Instagram</a>
-        </div>
     </nav>
 
     <main>
-        <section id="home" class="hero">
+        <section class="hero">
             <div class="hero-content">
                 <h1 id="hero-title">i do<br>stuffs.</h1>
                 <p id="hero-subtitle">Developer? Sure. But also other things.</p>
-                <p id="hero-desc" style="font-size: 1.2rem; font-weight: 500; margin-bottom: 3rem;">From building PCs to building backends, and from custom keyboards to custom melodies. I'm essentially a technical swiss-army knife that occasionally needs a reboot.</p>
-                <button class="btn-main" id="plans-btn">Hire Me (Or Don't)</button>
+                <div id="hero-desc" style="font-size: 1.5rem; max-width: 600px; margin-bottom: 2rem;">
+                    From building PCs to building backends, and from custom keyboards to custom melodies. I'm essentially a technical swiss-army knife that occasionally needs rebooting.
+                </div>
+                <button class="btn-main" id="plans-btn-hero">Execute Order 66</button>
             </div>
             <div class="illustration-container">
+                <div class="ascii-art">
+     .--------.
+    /  UNITS   \
+   /  0101101   \
+  |   _    _   |
+  |  (o)  (o)  |
+  |     ||     |
+  |    ____    |
+   \  \____/  /
+    '--------'
+    [ SYSTEM_OPERATOR ]
+                </div>
                 <img src="hero-agency.png" alt="Hero Illustration" class="illustration">
             </div>
-            <div class="wavy-bottom"></div>
         </section>
 
         <section id="about" class="secondary">
@@ -50,7 +58,7 @@
             </div>
             <div class="text-content">
                 <h2>My interests<br>have interests.</h2>
-                <p style="font-size: 1.2rem; font-weight: 500;">
+                <p style="font-size: 1.5rem;">
                     I don't just sit in front of a terminal all day. I'm the guy you call when your disk fails, your Hackintosh won't boot, or you need a guitarist/vocalist for your band. 
                     I build custom keyboards, tinker with Arduino, and write technical guides because someone has to. I also do music production and sound design, because silence is boring.
                 </p>
@@ -62,107 +70,133 @@
             <div class="card-grid">
                 <!-- Skill 1 -->
                 <div class="card" data-snark="Making Apple software run on non-Apple hardware is my love language.">
-                    <span class="level-tag">LVL 99</span>
-                    <div class="card-icon">🍎</div>
-                    <h3>Hackintoshing</h3>
-                    <p>I can make macOS run on almost anything. It's a dark art involving kexts and bootloaders.</p>
-                    <div class="xp-container"><div class="xp-bar" style="width: 95%"></div></div>
+                    <div class="card-content">
+                        <span class="level-tag">LVL 99</span>
+                        <div class="card-icon">🍎</div>
+                        <h3>Hackintoshing</h3>
+                        <p>I can make macOS run on almost anything. It's a dark art involving kexts and bootloaders.</p>
+                        <div class="xp-container"><div class="xp-bar" style="width: 95%"></div></div>
+                    </div>
                 </div>
                 <!-- Skill 2 -->
                 <div class="card" data-snark="The thock is real.">
-                    <span class="level-tag">LVL 85</span>
-                    <div class="card-icon">⌨️</div>
-                    <h3>Custom Keyboards</h3>
-                    <p>Lubing switches, soldering PCBs, and chasing the perfect sound profile.</p>
-                    <div class="xp-container"><div class="xp-bar" style="width: 85%"></div></div>
+                    <div class="card-content">
+                        <span class="level-tag">LVL 85</span>
+                        <div class="card-icon">⌨️</div>
+                        <h3>Custom Keyboards</h3>
+                        <p>Lubing switches, soldering PCBs, and chasing the perfect sound profile.</p>
+                        <div class="xp-container"><div class="xp-bar" style="width: 85%"></div></div>
+                    </div>
                 </div>
                 <!-- Skill 3 -->
                 <div class="card" data-snark="I'm a guitarist, but I promise I'm not that loud. (Lies).">
-                    <span class="level-tag">LVL 90</span>
-                    <div class="card-icon">🎸</div>
-                    <h3>Band & Performance</h3>
-                    <p>Songwriting, arranging, rhythm and lead guitar, and vocals. Crafting tracks from scratch.</p>
-                    <div class="xp-container"><div class="xp-bar" style="width: 90%"></div></div>
+                    <div class="card-content">
+                        <span class="level-tag">LVL 90</span>
+                        <div class="card-icon">🎸</div>
+                        <h3>Band & Performance</h3>
+                        <p>Songwriting, arranging, rhythm and lead guitar, and vocals. Crafting tracks from scratch.</p>
+                        <div class="xp-container"><div class="xp-bar" style="width: 90%"></div></div>
+                    </div>
                 </div>
                 <!-- Skill 4 -->
                 <div class="card" data-snark="I blink LEDs for fun.">
-                    <span class="level-tag">LVL 70</span>
-                    <div class="card-icon">🤖</div>
-                    <h3>Arduino & Embedded</h3>
-                    <p>Tinkering with microcontrollers, sensors, and hardware logic.</p>
-                    <div class="xp-container"><div class="xp-bar" style="width: 70%"></div></div>
+                    <div class="card-content">
+                        <span class="level-tag">LVL 70</span>
+                        <div class="card-icon">🤖</div>
+                        <h3>Arduino & Embedded</h3>
+                        <p>Tinkering with microcontrollers, sensors, and hardware logic.</p>
+                        <div class="xp-container"><div class="xp-bar" style="width: 70%"></div></div>
+                    </div>
                 </div>
                 <!-- Skill 5 -->
                 <div class="card" data-snark="Cable management is my cardio.">
-                    <span class="level-tag">LVL 80</span>
-                    <div class="card-icon">🖥️</div>
-                    <h3>PC Building</h3>
-                    <p>Custom loops, air-cooled monsters, and workstation rigs.</p>
-                    <div class="xp-container"><div class="xp-bar" style="width: 80%"></div></div>
+                    <div class="card-content">
+                        <span class="level-tag">LVL 80</span>
+                        <div class="card-icon">🖥️</div>
+                        <h3>PC Building</h3>
+                        <p>Custom loops, air-cooled monsters, and workstation rigs.</p>
+                        <div class="xp-container"><div class="xp-bar" style="width: 80%"></div></div>
+                    </div>
                 </div>
                 <!-- Skill 6 -->
                 <div class="card" data-snark="I've seen things you wouldn't believe.">
-                    <span class="level-tag">LVL 65</span>
-                    <div class="card-icon">💾</div>
-                    <h3>Disk Recovery</h3>
-                    <p>Bringing files back from the dead. Deleted, corrupted, or plain stubborn.</p>
-                    <div class="xp-container"><div class="xp-bar" style="width: 65%"></div></div>
+                    <div class="card-content">
+                        <span class="level-tag">LVL 65</span>
+                        <div class="card-icon">💾</div>
+                        <h3>Disk Recovery</h3>
+                        <p>Bringing files back from the dead. Deleted, corrupted, or plain stubborn.</p>
+                        <div class="xp-container"><div class="xp-bar" style="width: 65%"></div></div>
+                    </div>
                 </div>
                 <!-- Skill 7 -->
                 <div class="card" data-snark="Did you try turning it off and on again?">
-                    <span class="level-tag">LVL 75</span>
-                    <div class="card-icon">🛠️</div>
-                    <h3>HW Troubleshooting</h3>
-                    <p>Diagnosing hardware failure before you buy a new one.</p>
-                    <div class="xp-container"><div class="xp-bar" style="width: 75%"></div></div>
+                    <div class="card-content">
+                        <span class="level-tag">LVL 75</span>
+                        <div class="card-icon">🛠️</div>
+                        <h3>HW Troubleshooting</h3>
+                        <p>Diagnosing hardware failure before you buy a new one.</p>
+                        <div class="xp-container"><div class="xp-bar" style="width: 75%"></div></div>
+                    </div>
                 </div>
                 <!-- Skill 8 -->
-                <div class="card" data-snark="I write so you don't have to guess.">
-                    <span class="level-tag">LVL 88</span>
-                    <div class="card-icon">📝</div>
-                    <h3>Tech Writing</h3>
-                    <p>Documentation that people actually understand. Translating engineering gibberish.</p>
-                    <div class="xp-container"><div class="xp-bar" style="width: 88%"></div></div>
+                <div class="card" data-snark="Code is just my way of talking to ghosts in the machine.">
+                    <div class="card-content">
+                        <span class="level-tag">LVL 99</span>
+                        <div class="card-icon">💻</div>
+                        <h3>Software Dev</h3>
+                        <p>Architecting digital universes. I speak Fluent Python, JS, and occasional C++ when I'm feeling brave.</p>
+                        <div class="xp-container"><div class="xp-bar" style="width: 95%"></div></div>
+                    </div>
                 </div>
                 <!-- Skill 9 -->
                 <div class="card" data-snark="Whitespace is your friend.">
-                    <span class="level-tag">LVL 82</span>
-                    <div class="card-icon">🎨</div>
-                    <h3>UI/UX Design</h3>
-                    <p>Designing interfaces that don't hurt to look at. Focus on flow and accessibility.</p>
-                    <div class="xp-container"><div class="xp-bar" style="width: 82%"></div></div>
+                    <div class="card-content">
+                        <span class="level-tag">LVL 82</span>
+                        <div class="card-icon">🎨</div>
+                        <h3>UI/UX Design</h3>
+                        <p>Designing interfaces that don't hurt to look at. Focus on flow and accessibility.</p>
+                        <div class="xp-container"><div class="xp-bar" style="width: 82%"></div></div>
+                    </div>
                 </div>
                 <!-- Skill 10 -->
                 <div class="card" data-snark="The perfect snare doesn't exi—">
-                    <span class="level-tag">LVL 78</span>
-                    <div class="card-icon">🔊</div>
-                    <h3>Sound Design</h3>
-                    <p>Music production and sonic atmosphere. Shaping sound waves for emotional impact.</p>
-                    <div class="xp-container"><div class="xp-bar" style="width: 78%"></div></div>
+                    <div class="card-content">
+                        <span class="level-tag">LVL 78</span>
+                        <div class="card-icon">🔊</div>
+                        <h3>Sound Design</h3>
+                        <p>Music production and sonic atmosphere. Shaping sound waves for emotional impact.</p>
+                        <div class="xp-container"><div class="xp-bar" style="width: 78%"></div></div>
+                    </div>
                 </div>
                 <!-- Skill 11 -->
                 <div class="card" data-snark="Merge conflicts are my specialty.">
-                    <span class="level-tag">LVL 92</span>
-                    <div class="card-icon">🐙</div>
-                    <h3>GitHub Collab</h3>
-                    <p>Standardizing git workflows, code reviews, and project management.</p>
-                    <div class="xp-container"><div class="xp-bar" style="width: 92%"></div></div>
+                    <div class="card-content">
+                        <span class="level-tag">LVL 92</span>
+                        <div class="card-icon">🐙</div>
+                        <h3>GitHub Collab</h3>
+                        <p>Standardizing git workflows, code reviews, and project management.</p>
+                        <div class="xp-container"><div class="xp-bar" style="width: 92%"></div></div>
+                    </div>
                 </div>
                 <!-- Skill 12 -->
                 <div class="card" data-snark="I'm not the 'best', but I'm probably the most honest.">
-                    <span class="level-tag">LVL 95</span>
-                    <div class="card-icon">💻</div>
-                    <h3>Software Dev</h3>
-                    <p>Full-stack development across various stacks. Solving problems without new ones.</p>
-                    <div class="xp-container"><div class="xp-bar" style="width: 95%"></div></div>
+                    <div class="card-content">
+                        <span class="level-tag">LVL 95</span>
+                        <div class="card-icon">✍️</div>
+                        <h3>Technical Writing</h3>
+                        <p>Explaining complex stuff in simple ways. Documentation, guides, and tutorials.</p>
+                        <div class="xp-container"><div class="xp-bar" style="width: 95%"></div></div>
+                    </div>
                 </div>
-                <!-- Skill 13: Private Investigation (Hidden by default or special style) -->
+                <!-- Skill 13: Private Investigation (Hidden by default) -->
                 <div class="card investigator-only" data-snark="I find things that don't want to be found.">
-                    <span class="level-tag">LVL 75</span>
-                    <div class="card-icon">🕵️</div>
-                    <h3>Investigation</h3>
-                    <p>Private investigations on the side. Gathering intel, tracing digital footprints, and uncovering the truth.</p>
-                    <div class="xp-container"><div class="xp-bar" style="width: 75%; background: var(--noir-red);"></div></div>
+                    <div class="card-content">
+                        <span class="level-tag">LVL 75</span>
+                        <div class="card-icon">🕵️</div>
+                        <h3>Investigation</h3>
+                        <p>Private investigations on the side. Gathering intel, tracing digital footprints, and uncovering the truth.</p>
+                        <div class="xp-container"><div class="xp-bar" style="width: 75%; background: var(--noir-magenta);"></div></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -171,44 +205,42 @@
             <h2 style="font-family: var(--font-heading); font-size: 5rem; margin-bottom: 4rem;">The Project Lab</h2>
             <div class="card-grid" style="padding: 0 5%;">
                 <article class="card" data-snark="Saving lives, one vaccine at a time. No pressure.">
-                    <img src="projects/rabiesresq.png" alt="RabiesResQ Screenshot" class="project-img">
-                    <h3>RabiesResQ</h3>
-                    <p>Full-stack clinical rabies management. Helping clinics stay organized while saving lives.</p>
-                    <div style="margin-top: auto; font-weight: 900; color: var(--agency-pink); margin-bottom: 10px;">[ PYTHON / FLASK / SQL ]</div>
-                    <a href="https://rabiesresq.pythonanywhere.com/login" target="_blank" style="color: var(--agency-black); font-weight: 900; text-decoration: underline;">Open App</a>
+                    <div class="card-content">
+                        <img src="projects/rabiesresq.png" alt="RabiesResQ Screenshot" class="project-img">
+                        <h3>RabiesResQ</h3>
+                        <p>Full-stack clinical rabies management. Helping clinics stay organized while saving lives.</p>
+                        <div style="margin-top: auto; font-weight: 400; color: var(--agency-blue); margin-bottom: 10px;">[ PYTHON / FLASK / SQL ]</div>
+                        <a href="https://rabiesresq.pythonanywhere.com/login" target="_blank" style="color: var(--agency-blue); font-weight: 400; text-decoration: underline;">Open App</a>
+                    </div>
                 </article>
                 <article class="card" data-snark="Terminal vibes are the only vibes.">
-                    <img src="projects/addit%20'87.png" alt="Addit '87 Screenshot" class="project-img">
-                    <h3>Addit '87</h3>
-                    <p>Retro terminal diary inspired by 'The Lake'. Legacy aesthetic, modern code.</p>
-                    <div style="margin-top: auto; font-weight: 900; color: var(--agency-pink); margin-bottom: 10px;">[ RETRO / TERMINAL ]</div>
-                    <a href="https://github.com/pancak00/addit-87" target="_blank" style="color: var(--agency-black); font-weight: 900; text-decoration: underline;">Source</a>
-                </article>
-                <article class="card" data-snark="Don't forget to flip the tape.">
-                    <img src="projects/retro%20tape%20player.png" alt="Retro Tape Player Screenshot" class="project-img">
-                    <h3>Pancak Retro Tape</h3>
-                    <p>Web-based retro tape player that feels mechanical. Nostalgia in your browser.</p>
-                    <div style="margin-top: auto; font-weight: 900; color: var(--agency-pink); margin-bottom: 10px;">[ AUDIO / GSAP ]</div>
-                    <a href="https://pancak00.github.io/retrotapeplayer/" target="_blank" style="color: var(--agency-black); font-weight: 900; text-decoration: underline;">Launch</a>
-                </article>
-                <article class="card" data-snark="Math, but make it look cool.">
-                    <img src="projects/webcalc.png" alt="Retro Calculator Screenshot" class="project-img">
-                    <h3>Retro Calculator</h3>
-                    <p>Sleek, retro-UI calculator project. Math for sci-fi fans from 1992.</p>
-                    <div style="margin-top: auto; font-weight: 900; color: var(--agency-pink); margin-bottom: 10px;">[ UI / JAVASCRIPT ]</div>
-                    <a href="https://github.com/pancak00/calc" target="_blank" style="color: var(--agency-black); font-weight: 900; text-decoration: underline;">Source</a>
+                    <div class="card-content">
+                        <img src="projects/popoportfolio.png" alt="Portfolio Screenshot" class="project-img">
+                        <h3>This Portfolio</h3>
+                        <p>A retro-modern terminal experience. Gamified, interactive, and full of hidden secrets.</p>
+                        <div style="margin-top: auto; font-weight: 400; color: var(--agency-blue); margin-bottom: 10px;">[ HTML / CSS / JS ]</div>
+                        <a href="#" style="color: var(--agency-blue); font-weight: 400; text-decoration: underline;">You're here.</a>
+                    </div>
                 </article>
             </div>
         </section>
 
-        <section id="contact" style="text-align: center; padding-bottom: 200px;">
-            <h2 style="font-family: var(--font-heading); font-size: 5rem;">SAY WHATSUP</h2>
-            <p style="font-size: 1.5rem; margin-bottom: 3rem;">Ready to collab on code, music, or hardware?</p>
-            <a href="mailto:just@me.dev" class="btn-main" style="text-decoration: none;">GET IN TOUCH</a>
+        <section id="contact" style="padding: 100px 5%; text-align: center; background: var(--agency-white); border-top: var(--border-double);">
+            <h2 style="font-family: var(--font-heading); font-size: 5rem; margin-bottom: 2rem;">SAY WHATSUP</h2>
+            <p style="font-size: 1.5rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Whether you need a full-stack dev, a rhythm guitarist, or just someone to fix your Hackintosh—I'm usually around.
+            </p>
+            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
+                <a href="mailto:pancak00@gmail.com" class="btn-main" style="text-decoration: none;">[ EMAIL_SEND ]</a>
+                <a href="https://github.com/pancak00" target="_blank" class="btn-main" style="text-decoration: none;">[ GITHUB_FOLLOW ]</a>
+            </div>
         </section>
     </main>
 
-    <div id="snark-popup" class="snark-popup"></div>
+    <footer style="background: var(--agency-blue); color: #fff; padding: 2rem; text-align: center; border-top: 4px double #fff; font-family: var(--font-heading); font-size: 1.2rem;">
+        &copy; 2026 JUST.ME // [ ALL_SYSTEMS_GO ]
+    </footer>
+
     <script src="app.js"></script>
 </body>
 </html>
