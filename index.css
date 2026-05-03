@@ -91,11 +91,11 @@ body.noir-persona .persona-toggle {
 }
 
 /* investigator only card */
-.investigator-only {
+.card.investigator-only {
     display: none;
 }
 
-body.noir-persona .investigator-only {
+body.noir-persona .card.investigator-only {
     display: flex;
     border-color: var(--noir-red);
     box-shadow: 0 0 20px var(--noir-red);
