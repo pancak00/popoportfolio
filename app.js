@@ -83,22 +83,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- PERSONA TOGGLE (THE SE7EN EASTER EGG) ---
+    // --- SE7EN MODE (CHUNGKING EXPRESS PERSONA) ---
     const logo = document.querySelector('.logo');
     const heroTitle = document.getElementById('hero-title');
     const heroSubtitle = document.getElementById('hero-subtitle');
     const heroDesc = document.getElementById('hero-desc');
     const heroImg = document.querySelector('.hero .illustration');
     const secondaryImg = document.querySelector('.secondary .illustration');
-    
+    const navLinks = document.querySelectorAll('nav ul li a');
+    const skillTreeTitle = document.querySelector('#skills h2');
+    const labTitle = document.querySelector('#project-lab h2');
+    const contactTitle = document.querySelector('#contact h2');
+
     let isNoir = false;
     let logoClicks = 0;
     let clickTimer;
 
     logo.addEventListener('click', () => {
         logoClicks++;
-        
-        // Visual/Audio feedback for clicking (subtle)
         logo.style.transform = 'scale(0.95)';
         setTimeout(() => logo.style.transform = 'scale(1)', 100);
         playSound(200 + (logoClicks * 50), 'sine', 0.05);
@@ -108,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
             logoClicks = 0;
         }
 
-        // Reset clicks if user waits too long (3 seconds)
         clearTimeout(clickTimer);
         clickTimer = setTimeout(() => { logoClicks = 0; }, 3000);
     });
@@ -118,19 +119,42 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.classList.toggle('noir-persona');
         
         if (isNoir) {
-            heroTitle.innerHTML = "i find<br>things.";
-            heroSubtitle.textContent = "Digital footprint? I'll find it.";
-            heroDesc.textContent = "Private investigation on the side. I specialize in gathering intel that doesn't want to be found. From digital forensics to physical stakeouts. Keep it confidential.";
+            // Hero
+            heroTitle.innerHTML = "i find<br>things.<br><span style='font-size: 2rem; color: var(--noir-red);'>探偵</span>";
+            heroSubtitle.textContent = "Chungking Express vibe. I'll find the expiration date on your metadata.";
+            heroDesc.textContent = "I don't remember the exact time I first saw the data. All I know is that in 0.01ms, I was already inside the system. Private investigation with a cinematic tint.";
             heroImg.src = "hero-investigator.png";
             secondaryImg.style.filter = "grayscale(1) contrast(1.5)";
-            showSnark("DETECTIVE MODE ACTIVATED. WHAT'S IN THE BOX?");
-            playSound(110, 'sine', 1.0); // Deep cinematic drone
+            
+            // Nav
+            navLinks[0].textContent = "INTEL (情報)";
+            navLinks[1].textContent = "FILES (ファイル)";
+            navLinks[2].textContent = "THE SIGNAL (信号)";
+            
+            // Section Titles
+            skillTreeTitle.innerHTML = "The Case File<br><span style='font-size: 1.5rem; color: var(--noir-red);'>捜査資料</span>";
+            labTitle.innerHTML = "Report Log<br><span style='font-size: 1.5rem; color: #fff;'>報告ログ</span>";
+            contactTitle.innerHTML = "THE DROPOFF<br><span style='font-size: 1.5rem; color: var(--noir-red);'>秘密の連絡</span>";
+
+            showSnark("SE7EN MODE ACTIVATED. DO YOU LIKE PINEAPPLE?");
+            playSound(110, 'sine', 1.0); 
         } else {
             heroTitle.innerHTML = "i do<br>stuffs.";
             heroSubtitle.textContent = "Developer? Sure. But also other things.";
             heroDesc.textContent = "From building PCs to building backends, and from custom keyboards to custom melodies. I'm essentially a technical swiss-army knife that occasionally needs rebooting.";
             heroImg.src = "hero-agency.png";
             secondaryImg.style.filter = "none";
+            
+            // Nav
+            navLinks[0].textContent = "The Vibe";
+            navLinks[1].textContent = "The Stuffs";
+            navLinks[2].textContent = "The Signal";
+
+            // Section Titles
+            skillTreeTitle.textContent = "The Skill Tree";
+            labTitle.textContent = "The Project Lab";
+            contactTitle.textContent = "SAY WHATSUP";
+
             showSnark("Back to reality.");
             playSound(440, 'sine', 0.2);
         }
@@ -153,6 +177,5 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(img);
     });
 
-    console.log("%c--- PORTFOLIO ONLINE ---", "color: #e899d2; font-weight: bold; font-size: 16px;");
-    console.log("%cThere are 7 sins. And maybe 7 clicks?", "color: #8b0000; font-weight: bold; font-style: italic;");
+    console.log("%c--- SE7EN MODE INITIALIZED ---", "color: #8b0000; font-weight: bold; font-size: 16px;");
 });

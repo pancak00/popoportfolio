@@ -57,6 +57,17 @@ body.noir-persona h1, body.noir-persona h2, body.noir-persona h3 {
     font-family: 'Courier Prime', monospace;
     text-transform: uppercase;
     letter-spacing: 2px;
+    text-shadow: 0 0 10px var(--noir-red), 0 0 20px var(--noir-red);
+}
+
+body.noir-persona .illustration {
+    filter: sepia(0.5) contrast(1.2) brightness(0.8);
+    box-shadow: 0 0 30px var(--noir-red);
+}
+
+body.noir-persona .card:hover {
+    border-color: #fff;
+    box-shadow: 15px 15px 0px var(--noir-red);
 }
 
 /* Persona Toggle Button */
@@ -328,6 +339,14 @@ section {
     box-shadow: 6px 6px 0px var(--agency-pink);
     z-index: 1001;
     border: 2px solid #fff;
+    transition: all 0.3s ease;
+}
+
+body.noir-persona .xp-counter {
+    background: #000;
+    color: var(--noir-red);
+    box-shadow: 6px 6px 0px #fff;
+    border-color: var(--noir-red);
 }
 
 .card-icon {
