@@ -9,8 +9,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <button id="persona-toggle" class="persona-toggle">
+        <span id="persona-icon">🛡️</span>
+        <span id="persona-label">Go Confidential</span>
+    </button>
     <div id="xp-counter" class="xp-counter">LVL 1 | XP 0</div>
 
     <nav>
@@ -32,9 +37,9 @@
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
-                <h1>i do<br>stuffs.</h1>
-                <p>Developer? Sure. But also other things.</p>
-                <p style="font-size: 1.2rem; font-weight: 500; margin-bottom: 3rem;">From building PCs to building backends, and from custom keyboards to custom melodies. I'm essentially a technical swiss-army knife that occasionally needs a reboot.</p>
+                <h1 id="hero-title">i do<br>stuffs.</h1>
+                <p id="hero-subtitle">Developer? Sure. But also other things.</p>
+                <p id="hero-desc" style="font-size: 1.2rem; font-weight: 500; margin-bottom: 3rem;">From building PCs to building backends, and from custom keyboards to custom melodies. I'm essentially a technical swiss-army knife that occasionally needs a reboot.</p>
                 <button class="btn-main" id="plans-btn">Hire Me (Or Don't)</button>
             </div>
             <div class="illustration-container">
@@ -154,6 +159,14 @@
                     <h3>Software Dev</h3>
                     <p>Full-stack development across various stacks. Solving problems without new ones.</p>
                     <div class="xp-container"><div class="xp-bar" style="width: 95%"></div></div>
+                </div>
+                <!-- Skill 13: Private Investigation (Hidden by default or special style) -->
+                <div class="card investigator-only" data-snark="I find things that don't want to be found.">
+                    <span class="level-tag">LVL 75</span>
+                    <div class="card-icon">🕵️</div>
+                    <h3>Investigation</h3>
+                    <p>Private investigations on the side. Gathering intel, tracing digital footprints, and uncovering the truth.</p>
+                    <div class="xp-container"><div class="xp-bar" style="width: 75%; background: var(--noir-red);"></div></div>
                 </div>
             </div>
         </section>

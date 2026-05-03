@@ -6,12 +6,99 @@
     --font-heading: 'Lexend', sans-serif;
     --font-body: 'Inter', sans-serif;
     --border-thick: 3px solid var(--agency-black);
+    
+    /* Noir Persona Variables */
+    --noir-dark: #0a0a0a;
+    --noir-red: #8b0000;
+    --noir-grey: #2c2c2c;
+    --noir-accent: #ff0000;
+}
+
+body.noir-persona {
+    background-color: var(--noir-dark);
+    color: #e0e0e0;
+    font-family: 'Courier Prime', monospace;
+}
+
+body.noir-persona :root {
+    --agency-black: #000000;
+}
+
+body.noir-persona nav {
+    background: #000;
+    border-bottom: 2px solid var(--noir-red);
+}
+
+body.noir-persona .hero {
+    background-color: var(--noir-grey);
+    border-bottom: 3px solid var(--noir-red);
+}
+
+body.noir-persona .wavy-bottom {
+    background: var(--noir-grey);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 80%); /* Sharper spy-like edge */
+}
+
+body.noir-persona .btn-main {
+    background: var(--noir-red);
+    color: #fff;
+    border-color: #000;
+    box-shadow: 6px 6px 0px #000;
+}
+
+body.noir-persona .card {
+    background: #1a1a1a;
+    border-color: var(--noir-red);
+    color: #ccc;
+    box-shadow: 8px 8px 0px #000;
+}
+
+body.noir-persona h1, body.noir-persona h2, body.noir-persona h3 {
+    font-family: 'Courier Prime', monospace;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Persona Toggle Button */
+.persona-toggle {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    background: var(--agency-black);
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    z-index: 2000;
+    font-family: var(--font-heading);
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 4px 4px 0px var(--agency-pink);
+}
+
+body.noir-persona .persona-toggle {
+    background: var(--noir-red);
+    box-shadow: 4px 4px 0px #000;
 }
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+/* investigator only card */
+.investigator-only {
+    display: none;
+}
+
+body.noir-persona .investigator-only {
+    display: flex;
+    border-color: var(--noir-red);
+    box-shadow: 0 0 20px var(--noir-red);
 }
 
 body {

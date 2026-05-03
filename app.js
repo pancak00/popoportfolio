@@ -107,6 +107,44 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(img);
     });
 
+    // Persona Toggle Logic
+    const personaToggle = document.getElementById('persona-toggle');
+    const heroTitle = document.getElementById('hero-title');
+    const heroSubtitle = document.getElementById('hero-subtitle');
+    const heroDesc = document.getElementById('hero-desc');
+    const personaIcon = document.getElementById('persona-icon');
+    const personaLabel = document.getElementById('persona-label');
+
+    const heroImg = document.querySelector('.hero .illustration');
+    const secondaryImg = document.querySelector('.secondary .illustration');
+
+    let isNoir = false;
+    personaToggle.addEventListener('click', () => {
+        isNoir = !isNoir;
+        document.body.classList.toggle('noir-persona');
+        
+        if (isNoir) {
+            heroTitle.innerHTML = "i find<br>things.";
+            heroSubtitle.textContent = "Digital footprint? I'll find it.";
+            heroDesc.textContent = "Private investigation on the side. I specialize in gathering intel that doesn't want to be found. From digital forensics to physical stakeouts. Keep it confidential.";
+            personaIcon.textContent = "💡";
+            personaLabel.textContent = "Back to Normal";
+            heroImg.src = "hero-investigator.png";
+            secondaryImg.style.filter = "grayscale(1) contrast(1.5)";
+            playSound(110, 'sine', 0.5); // Deep dramatic note
+        } else {
+            heroTitle.innerHTML = "i do<br>stuffs.";
+            heroSubtitle.textContent = "Developer? Sure. But also other things.";
+            heroDesc.textContent = "From building PCs to building backends, and from custom keyboards to custom melodies. I'm essentially a technical swiss-army knife that occasionally needs a reboot.";
+            personaIcon.textContent = "🛡️";
+            personaLabel.textContent = "Go Confidential";
+            heroImg.src = "hero-agency.png";
+            secondaryImg.style.filter = "none";
+            playSound(440, 'sine', 0.2);
+        }
+    });
+
     console.log("%c--- PORTFOLIO GAMIFIED ---", "color: #e899d2; font-weight: bold; font-size: 16px;");
     console.log("%cDiscover all skills to level up!", "color: #f4c542; font-weight: bold;");
+    console.log("%cPsst... there's a confidential mode in the bottom left.", "color: #8b0000; font-weight: bold;");
 });
