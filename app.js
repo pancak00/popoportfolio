@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- SE7EN MODE (CASE FILE PERSONA) ---
+    // --- SE7EN MODE (DOS TERMINAL PERSONA) ---
     const logo = document.querySelector('.logo');
     const heroTitle = document.getElementById('hero-title');
     const heroSubtitle = document.getElementById('hero-subtitle');
@@ -120,25 +120,25 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (isNoir) {
             // Hero
-            heroTitle.innerHTML = "i find<br>things.<br><span style='font-size: 1.5rem; background: var(--noir-magenta); color: #fff; padding: 2px 10px;'>CONFIDENTIAL</span>";
-            heroSubtitle.textContent = "Subject: 001. Location: Encrypted. Status: Investigating.";
-            heroDesc.textContent = "Report Summary: This individual does not just process data; they track its shadow. Multiple technical proficiencies detected. Private investigation activities verified. Keep this file secure.";
+            heroTitle.innerHTML = "C:\\> FIND.EXE<br><span style='font-size: 1.5rem; color: #fff; background: var(--noir-accent); padding: 2px 10px;'>SYSTEM_ADMIN</span>";
+            heroSubtitle.textContent = "VERSION 7.0 // SE7EN_MODE ACTIVE";
+            heroDesc.textContent = "CORE PROCESS: DATA TRACKING. INVESTIGATION PROTOCOLS ENGAGED. SCANNING FOR DIGITAL FOOTPRINTS. ALL SYSTEMS NOMINAL. CONFIDENTIALITY LEVEL: MAXIMUM.";
             heroImg.src = "projects/typewriter.png";
             secondaryImg.src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzJ1Z3R2bDJzMWtsZ3VnY3gyNTdlNTY3cW0yeXAxYmZ6cTJueGJrNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/31X5ofUNHSjjf0o2KQ/giphy.gif";
-            secondaryImg.style.filter = "grayscale(1) contrast(1.5)";
+            secondaryImg.style.filter = "grayscale(1) contrast(2) brightness(1)";
             
             // Nav
-            navLinks[0].textContent = "DOSSIER";
-            navLinks[1].textContent = "EVIDENCE";
-            navLinks[2].textContent = "CONTACT";
+            navLinks[0].textContent = "DIR /SYSTEM";
+            navLinks[1].textContent = "DIR /FILES";
+            navLinks[2].textContent = "SEND_MSG";
             
             // Section Titles
-            skillTreeTitle.innerHTML = "Technical Dossier<br><span style='font-size: 1rem; border: 1px solid var(--noir-accent); padding: 2px 10px;'>CLASSIFIED</span>";
-            labTitle.innerHTML = "Case Evidence Log<br><span style='font-size: 1rem; border: 1px solid var(--noir-accent); padding: 2px 10px;'>EXHIBIT A-D</span>";
-            contactTitle.innerHTML = "SECURE DROPOFF";
+            skillTreeTitle.innerHTML = "[ SYSTEM_DUMP ]<br>SKILL_SET_ARRAY";
+            labTitle.innerHTML = "[ CASE_LOG ]<br>EXHIBIT_VIEWER";
+            contactTitle.innerHTML = "[ CONNECT_REMOTE ]";
 
-            showSnark("FILE 007 ACCESSED. WHAT'S IN THE BOX?");
-            playSound(150, 'square', 0.2); 
+            showSnark("SYSTEM BOOTED. LOADING SE7EN_PROTOCOL.");
+            playSound(200, 'square', 0.2); 
         } else {
             heroTitle.innerHTML = "i do<br>stuffs.";
             heroSubtitle.textContent = "Developer? Sure. But also other things.";
@@ -157,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
             labTitle.textContent = "The Project Lab";
             contactTitle.textContent = "SAY WHATSUP";
 
-            showSnark("Dossier closed.");
+            showSnark("Exiting System.");
             playSound(440, 'sine', 0.2);
         }
     };
@@ -179,5 +179,5 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(img);
     });
 
-    console.log("%c--- FILE SYSTEM ONLINE ---", "color: #1a1a1a; font-weight: bold; font-size: 16px;");
+    console.log("%c--- BIOS v7.0 ONLINE ---", "color: #0000aa; font-weight: bold; font-size: 16px;");
 });
