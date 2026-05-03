@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     --agency-blue: #0000aa;
     --agency-blue-light: #00aaaa;
@@ -14,6 +18,8 @@
     --noir-accent: #0000aa; /* Classic BIOS Blue */
     --noir-magenta: #00aaaa; /* Cyan secondary */
     --win-grey: #dfdfdf; /* Classic Window Grey */
+html {
+    scroll-behavior: smooth;
 }
 
 body.noir-persona {
@@ -80,31 +86,16 @@ body.noir-persona .card:hover h3, body.noir-persona .card:hover p {
     color: #fff;
 }
 
-/* Persona Toggle Button */
-.persona-toggle {
-    position: fixed;
-    bottom: 30px;
-    left: 30px;
-    background: var(--agency-black);
-    color: #fff;
-    border: 2px solid #fff;
-    padding: 10px 15px;
-    border-radius: 50px;
-    cursor: pointer;
-    z-index: 2000;
-    font-family: var(--font-heading);
-    font-weight: 900;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    box-shadow: 4px 4px 0px var(--agency-pink);
+/* Adjustments for mobile */
+@media (max-width: 768px) {
+    nav ul {
+        gap: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
 }
 
-body.noir-persona .persona-toggle {
-    background: var(--noir-red);
-    box-shadow: 4px 4px 0px #000;
-}
-
+/* Adjustments for default styles */
 * {
     margin: 0;
     padding: 0;
@@ -185,6 +176,15 @@ nav a {
     font-weight: 400;
     font-size: 1.5rem;
     text-transform: uppercase;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+    border: 2px solid transparent;
+}
+
+nav a:hover {
+    background: #fff;
+    color: var(--agency-blue);
+    border-color: #fff;
 }
 
 .nav-btn {
@@ -195,6 +195,15 @@ nav a {
     font-family: var(--font-heading);
     font-size: 1.5rem;
     cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.nav-btn:hover {
+    background: var(--agency-blue);
+    color: var(--agency-white);
+    border-color: #fff;
 }
 
 /* Sections */
@@ -244,7 +253,16 @@ section {
     border: 4px double #fff;
     cursor: pointer;
     box-shadow: 8px 8px 0px var(--agency-blue-light);
-    transition: all 0.1s steps(2);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.btn-main:hover {
+    background: var(--agency-white);
+    color: var(--agency-blue);
+    border: 4px double var(--agency-blue);
+    transform: translate(-2px, -2px);
+    box-shadow: 10px 10px 0px var(--agency-blue-light);
 }
 
 .btn-main:active {
@@ -344,17 +362,55 @@ body.noir-persona .lab-section {
 .card:hover {
     transform: translate(2px, 2px);
     box-shadow: 2px 2px 0px var(--agency-blue);
-    background: #f0f0f0;
+    background: var(--agency-blue);
+}
+
+.card:hover .card-content h3, 
+.card:hover .card-content p, 
+.card:hover .card-content .level-tag,
+.card:hover .card-content .card-icon {
+    color: #fff !important;
 }
 
 .ascii-art {
-    font-family: monospace;
+    font-family: 'VT323', monospace;
     white-space: pre;
-    font-size: 0.8rem;
-    line-height: 1;
+    line-height: 0.75; 
+    letter-spacing: 1px; 
     color: var(--agency-blue);
     margin-bottom: 2rem;
+    overflow: hidden;
+    text-align: right;
+}
+
+.ascii-hero {
+    font-size: 0.78rem; /* Balanced size for the main profile */
+}
+
+.ascii-secondary {
+    font-size: 0.45rem; /* Balanced for the interests section */
+}
+
+.card-ascii {
+    font-family: monospace;
+    font-size: 1.5px;
+    line-height: 1;
+    letter-spacing: 0;
+    color: var(--agency-blue);
+    background: transparent;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    pointer-events: none;
+    display: block;
+    max-height: 120px;
     image-rendering: pixelated;
+}
+
+.illustration-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
 }
 
 .card:hover h3, .card:hover p, .card:hover a {
@@ -369,6 +425,51 @@ body.noir-persona .lab-section {
     border-radius: 0;
     margin-bottom: 1.5rem;
     image-rendering: pixelated;
+}
+
+.meta-placeholder {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--agency-blue);
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    border: 4px double #fff;
+}
+
+.recursive-text {
+    font-size: 2.2rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+footer {
+    background: var(--agency-blue);
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+    border-top: 4px double #fff;
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+}
+
+body.dark-mode footer {
+    background: #1e1e1e;
+    color: var(--agency-blue);
+    border-top-color: var(--agency-blue);
+}
+.recursive-sub {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.card:hover .meta-placeholder {
+    background: #fff;
+    color: var(--agency-blue);
+    border-color: var(--agency-blue);
 }
 
 .card.discovered {

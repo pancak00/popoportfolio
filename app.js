@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let totalXp = 0;
     let discoveredSkills = new Set();
     const xpCounter = document.getElementById('xp-counter');
+    const body = document.body;
+    let isNoir = false;
     
     // Audio Context for sounds
     const playSound = (freq, type = 'sine', duration = 0.1) => {
@@ -41,14 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const showSnark = (msg) => {
         snarkPopup.textContent = msg;
         snarkPopup.classList.add('active');
-        setTimeout(() => snarkPopup.classList.remove('active'), 3000);
+    };
+    const hideSnark = () => {
+        snarkPopup.classList.remove('active');
     };
 
     // Card hover snark + XP logic
     document.querySelectorAll('.card').forEach((card, index) => {
         card.addEventListener('mouseenter', () => {
             const msg = card.getAttribute('data-snark');
-            showSnark(msg);
+            if (msg) showSnark(msg);
 
             if (!discoveredSkills.has(index)) {
                 discoveredSkills.add(index);
@@ -64,24 +68,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateXp(100);
             }
         });
+
+        card.addEventListener('mouseleave', () => {
+            hideSnark();
+        });
     });
 
-    // Plans button runaway
-    const plansBtn = document.getElementById('plans-btn');
-    let escaped = false;
-    plansBtn.addEventListener('mouseenter', () => {
-        if (!escaped) {
-            plansBtn.style.position = 'relative';
-            plansBtn.style.transform = `translate(${Math.random() > 0.5 ? 100 : -100}px, ${Math.random() > 0.5 ? 50 : -50}px) rotate(5deg)`;
-            showSnark("I'm probably busy building a keyboard or practicing guitar. Check back later.");
-            escaped = true;
-            playSound(110, 'sawtooth', 0.2);
-            setTimeout(() => {
-                plansBtn.style.transform = 'none';
-                escaped = false;
-            }, 2000);
-        }
-    });
 
     // --- SE7EN MODE (DOS TERMINAL PERSONA) ---
     const logo = document.querySelector('.logo');
@@ -89,13 +81,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const heroSubtitle = document.getElementById('hero-subtitle');
     const heroDesc = document.getElementById('hero-desc');
     const heroImg = document.querySelector('.hero .illustration');
+    const heroAscii = document.getElementById('hero-ascii');
     const secondaryImg = document.querySelector('.secondary .illustration');
     const navLinks = document.querySelectorAll('nav ul li a');
     const skillTreeTitle = document.querySelector('#skills h2');
     const labTitle = document.querySelector('#project-lab h2');
     const contactTitle = document.querySelector('#contact h2');
 
-    let isNoir = false;
     let logoClicks = 0;
     let clickTimer;
 
@@ -116,14 +108,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const triggerNoir = () => {
         isNoir = !isNoir;
-        document.body.classList.toggle('noir-persona');
+        body.classList.toggle('noir-persona');
         
         if (isNoir) {
             // Hero
             heroTitle.innerHTML = "C:\\> FIND.EXE<br><span style='font-size: 1.5rem; color: #fff; background: var(--noir-accent); padding: 2px 10px;'>SYSTEM_ADMIN</span>";
             heroSubtitle.textContent = "VERSION 7.0 // SE7EN_MODE ACTIVE";
             heroDesc.textContent = "CORE PROCESS: DATA TRACKING. INVESTIGATION PROTOCOLS ENGAGED. SCANNING FOR DIGITAL FOOTPRINTS. ALL SYSTEMS NOMINAL. CONFIDENTIALITY LEVEL: MAXIMUM.";
-            heroImg.src = "projects/typewriter.png";
+            
+            if(heroAscii) heroAscii.style.display = 'none';
+            heroImg.style.display = 'block';
+            heroImg.src = "hero-investigator.png";
+            
             secondaryImg.src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzJ1Z3R2bDJzMWtsZ3VnY3gyNTdlNTY3cW0yeXAxYmZ6cTJueGJrNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/31X5ofUNHSjjf0o2KQ/giphy.gif";
             secondaryImg.style.filter = "grayscale(1) contrast(2) brightness(1)";
             
@@ -143,7 +139,10 @@ document.addEventListener('DOMContentLoaded', () => {
             heroTitle.innerHTML = "i do<br>stuffs.";
             heroSubtitle.textContent = "Developer? Sure. But also other things.";
             heroDesc.textContent = "From building PCs to building backends, and from custom keyboards to custom melodies. I'm essentially a technical swiss-army knife that occasionally needs rebooting.";
-            heroImg.src = "projects/ascii-art.png";
+            
+            if(heroAscii) heroAscii.style.display = 'block';
+            heroImg.style.display = 'none';
+            
             secondaryImg.src = "secondary-agency.png";
             secondaryImg.style.filter = "none";
             
