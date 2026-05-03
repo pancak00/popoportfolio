@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         logoClicks++;
         logo.style.transform = 'scale(0.95)';
         setTimeout(() => logo.style.transform = 'scale(1)', 100);
-        playSound(200 + (logoClicks * 50), 'sine', 0.05);
+        playSound(300 + (logoClicks * 100), 'sine', 0.05);
 
         if (logoClicks === 7) {
             triggerNoir();
@@ -120,11 +120,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (isNoir) {
             // Hero
-            heroTitle.innerHTML = "i find<br>things.<br><span style='font-size: 2rem; color: var(--noir-red);'>探偵</span>";
-            heroSubtitle.textContent = "Chungking Express vibe. I'll find the expiration date on your metadata.";
-            heroDesc.textContent = "I don't remember the exact time I first saw the data. All I know is that in 0.01ms, I was already inside the system. Private investigation with a cinematic tint.";
+            heroTitle.innerHTML = "i find<br>things.<br><span style='font-size: 2rem; color: var(--noir-accent);'>探偵</span>";
+            heroSubtitle.textContent = "Dreamy city nights. Every data point has a story.";
+            heroDesc.textContent = "We share the same city, but different frequencies. In 0.01ms, our orbits crossed. Private investigation in a world of neon haze.";
             heroImg.src = "hero-investigator.png";
-            secondaryImg.style.filter = "grayscale(1) contrast(1.5)";
+            secondaryImg.style.filter = "saturate(2) contrast(1.2) blur(2px)";
             
             // Nav
             navLinks[0].textContent = "INTEL (情報)";
@@ -132,12 +132,12 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks[2].textContent = "THE SIGNAL (信号)";
             
             // Section Titles
-            skillTreeTitle.innerHTML = "The Case File<br><span style='font-size: 1.5rem; color: var(--noir-red);'>捜査資料</span>";
-            labTitle.innerHTML = "Report Log<br><span style='font-size: 1.5rem; color: #fff;'>報告ログ</span>";
-            contactTitle.innerHTML = "THE DROPOFF<br><span style='font-size: 1.5rem; color: var(--noir-red);'>秘密の連絡</span>";
+            skillTreeTitle.innerHTML = "The Case File<br><span style='font-size: 1.5rem; color: var(--noir-accent);'>捜査資料</span>";
+            labTitle.innerHTML = "Report Log<br><span style='font-size: 1.5rem; color: var(--noir-magenta);'>報告ログ</span>";
+            contactTitle.innerHTML = "THE DROPOFF<br><span style='font-size: 1.5rem; color: var(--noir-accent);'>秘密の連絡</span>";
 
-            showSnark("SE7EN MODE ACTIVATED. DO YOU LIKE PINEAPPLE?");
-            playSound(110, 'sine', 1.0); 
+            showSnark("SE7EN MODE ACTIVATED. PINEAPPLE DREAMS.");
+            playSound(330, 'sine', 1.5); // Lighter, airy sound
         } else {
             heroTitle.innerHTML = "i do<br>stuffs.";
             heroSubtitle.textContent = "Developer? Sure. But also other things.";
@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', () => {
             labTitle.textContent = "The Project Lab";
             contactTitle.textContent = "SAY WHATSUP";
 
-            showSnark("Back to reality.");
+            showSnark("Back to the day job.");
             playSound(440, 'sine', 0.2);
         }
     };
@@ -177,5 +177,5 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(img);
     });
 
-    console.log("%c--- SE7EN MODE INITIALIZED ---", "color: #8b0000; font-weight: bold; font-size: 16px;");
+    console.log("%c--- SE7EN MODE INITIALIZED ---", "color: #00f5d4; font-weight: bold; font-size: 16px;");
 });

@@ -7,11 +7,11 @@
     --font-body: 'Inter', sans-serif;
     --border-thick: 3px solid var(--agency-black);
     
-    /* Noir Persona Variables */
-    --noir-dark: #0a0a0a;
-    --noir-red: #8b0000;
-    --noir-grey: #2c2c2c;
-    --noir-accent: #ff0000;
+    /* Chungking Persona Variables */
+    --noir-dark: #0d1b2a;
+    --noir-accent: #00f5d4; /* Neon Cyan */
+    --noir-magenta: #ff0054; /* Soft Magenta */
+    --noir-haze: rgba(0, 245, 212, 0.1);
 }
 
 body.noir-persona {
@@ -25,13 +25,14 @@ body.noir-persona :root {
 }
 
 body.noir-persona nav {
-    background: #000;
-    border-bottom: 2px solid var(--noir-red);
+    background: rgba(13, 27, 42, 0.8);
+    border-bottom: 2px solid var(--noir-accent);
+    backdrop-filter: blur(10px);
 }
 
 body.noir-persona .hero {
-    background-color: var(--noir-grey);
-    border-bottom: 3px solid var(--noir-red);
+    background-color: var(--noir-dark);
+    border-bottom: 3px solid var(--noir-accent);
 }
 
 body.noir-persona .wavy-bottom {
@@ -40,34 +41,35 @@ body.noir-persona .wavy-bottom {
 }
 
 body.noir-persona .btn-main {
-    background: var(--noir-red);
-    color: #fff;
+    background: var(--noir-accent);
+    color: #000;
     border-color: #000;
-    box-shadow: 6px 6px 0px #000;
+    box-shadow: 6px 6px 0px var(--noir-magenta);
 }
 
 body.noir-persona .card {
-    background: #1a1a1a;
-    border-color: var(--noir-red);
-    color: #ccc;
-    box-shadow: 8px 8px 0px #000;
+    background: rgba(26, 26, 26, 0.6);
+    border-color: var(--noir-accent);
+    color: #e0e0e0;
+    box-shadow: 8px 8px 0px var(--noir-magenta);
+    backdrop-filter: blur(8px);
 }
 
 body.noir-persona h1, body.noir-persona h2, body.noir-persona h3 {
-    font-family: 'Courier Prime', monospace;
+    font-family: var(--font-heading);
     text-transform: uppercase;
-    letter-spacing: 2px;
-    text-shadow: 0 0 10px var(--noir-red), 0 0 20px var(--noir-red);
+    letter-spacing: 4px;
+    text-shadow: 0 0 10px var(--noir-accent);
 }
 
 body.noir-persona .illustration {
-    filter: sepia(0.5) contrast(1.2) brightness(0.8);
-    box-shadow: 0 0 30px var(--noir-red);
+    filter: saturate(1.5) contrast(1.1) brightness(0.9) hue-rotate(180deg);
+    box-shadow: 0 0 40px var(--noir-haze);
 }
 
 body.noir-persona .card:hover {
     border-color: #fff;
-    box-shadow: 15px 15px 0px var(--noir-red);
+    box-shadow: 12px 12px 0px var(--noir-accent);
 }
 
 /* Persona Toggle Button */
@@ -108,8 +110,8 @@ body.noir-persona .persona-toggle {
 
 body.noir-persona .card.investigator-only {
     display: flex;
-    border-color: var(--noir-red);
-    box-shadow: 0 0 20px var(--noir-red);
+    border-color: var(--noir-magenta);
+    box-shadow: 0 0 30px rgba(255, 0, 84, 0.3);
 }
 
 body {
