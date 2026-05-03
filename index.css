@@ -1,11 +1,13 @@
 :root {
     --agency-pink: #e899d2;
     --agency-yellow: #f4c542;
-    --agency-black: #080808;
+    --agency-black: #000000;
     --agency-white: #ffffff;
-    --font-heading: 'Lexend', sans-serif;
-    --font-body: 'Inter', sans-serif;
-    --border-thick: 3px solid var(--agency-black);
+    --font-heading: 'VT323', monospace;
+    --font-body: 'VT323', monospace;
+    --border-thick: 4px solid var(--agency-black);
+    --border-double: 6px double var(--agency-black);
+}
     
     /* DOS Terminal Persona Variables */
     --noir-dark: #ffffff; /* System White */
@@ -140,27 +142,30 @@ body {
     background-color: var(--agency-white);
     color: var(--agency-black);
     font-family: var(--font-body);
-    line-height: 1.6;
+    line-height: 1.2;
     overflow-x: hidden;
+    font-size: 1.5rem; /* Larger for pixel font readability */
 }
 
 /* Navigation */
 nav {
     background: var(--agency-black);
-    padding: 1.5rem 5%;
+    padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     position: sticky;
     top: 0;
     z-index: 1000;
+    border-bottom: var(--border-double);
 }
 
 .logo {
     color: var(--agency-white);
     font-family: var(--font-heading);
-    font-weight: 900;
-    font-size: 1.5rem;
+    font-weight: 400;
+    font-size: 2.5rem;
+    letter-spacing: 2px;
 }
 
 nav ul {
@@ -300,24 +305,22 @@ body.noir-persona .lab-section {
 
 .card {
     background: var(--agency-white);
-    border: var(--border-thick);
-    border-radius: 24px;
+    border: var(--border-double);
     padding: 2rem;
     text-align: left;
-    box-shadow: 8px 8px 0px var(--agency-black);
+    box-shadow: 12px 12px 0px var(--agency-black);
     display: flex;
     flex-direction: column;
     min-height: 480px;
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.2s steps(4); /* Blocky transition */
     cursor: crosshair;
     position: relative;
     overflow: hidden;
 }
 
 .card:hover {
-    transform: translate(-5px, -5px) scale(1.02);
-    box-shadow: 15px 15px 0px var(--agency-black);
-    background: #fff;
+    transform: translate(-6px, -6px);
+    box-shadow: 18px 18px 0px var(--agency-pink);
     border-color: var(--agency-pink);
 }
 
