@@ -1,12 +1,12 @@
 :root {
-    --agency-pink: #e899d2;
-    --agency-yellow: #f4c542;
+    --agency-blue: #0000aa;
+    --agency-blue-light: #00aaaa;
     --agency-black: #000000;
     --agency-white: #ffffff;
     --font-heading: 'VT323', monospace;
     --font-body: 'VT323', monospace;
-    --border-thick: 4px solid var(--agency-black);
-    --border-double: 6px double var(--agency-black);
+    --border-thick: 4px solid var(--agency-blue);
+    --border-double: 6px double var(--agency-blue);
 }
     
     /* DOS Terminal Persona Variables */
@@ -140,16 +140,16 @@ body.noir-persona .card.investigator-only::after {
 
 body {
     background-color: var(--agency-white);
-    color: var(--agency-black);
+    color: var(--agency-blue);
     font-family: var(--font-body);
     line-height: 1.2;
     overflow-x: hidden;
-    font-size: 1.5rem; /* Larger for pixel font readability */
+    font-size: 1.5rem;
 }
 
 /* Navigation */
 nav {
-    background: var(--agency-black);
+    background: var(--agency-blue);
     padding: 1rem 5%;
     display: flex;
     justify-content: space-between;
@@ -157,7 +157,7 @@ nav {
     position: sticky;
     top: 0;
     z-index: 1000;
-    border-bottom: var(--border-double);
+    border-bottom: 4px double #fff;
 }
 
 .logo {
@@ -166,27 +166,34 @@ nav {
     font-weight: 400;
     font-size: 2.5rem;
     letter-spacing: 2px;
+    cursor: pointer;
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    align-items: center;
+    gap: 3rem;
+    margin: 0;
+    padding: 0;
 }
 
 nav a {
     color: var(--agency-white);
     text-decoration: none;
-    font-weight: 500;
-    font-size: 0.9rem;
+    font-weight: 400;
+    font-size: 1.5rem;
+    text-transform: uppercase;
 }
 
 .nav-btn {
-    background: var(--agency-white);
-    color: var(--agency-black);
-    padding: 8px 20px;
-    border-radius: 8px;
-    font-weight: 900;
+    background: #fff;
+    color: var(--agency-blue);
+    padding: 5px 15px;
+    border: 2px solid var(--agency-blue);
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    cursor: pointer;
 }
 
 /* Sections */
@@ -197,52 +204,46 @@ section {
 
 /* Hero Section */
 .hero {
-    background-color: var(--agency-pink);
+    background-color: var(--agency-white);
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     align-items: center;
     gap: 4rem;
     min-height: 80vh;
-    border-bottom: var(--border-thick);
+    border-bottom: var(--border-double);
 }
 
-/* Wavy Divider */
+/* Wavy Divider - Updated for Terminal vibe */
 .wavy-bottom {
-    position: absolute;
-    bottom: -1px;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background: var(--agency-pink);
-    clip-path: polygon(0% 0%, 100% 0%, 100% 70%, 85% 90%, 70% 70%, 55% 90%, 40% 70%, 25% 90%, 10% 70%, 0% 90%);
+    display: none;
 }
 
 .hero-content h1 {
     font-family: var(--font-heading);
-    font-size: 6rem;
-    line-height: 0.9;
-    color: var(--agency-white);
+    font-size: 8rem;
+    line-height: 0.8;
+    color: var(--agency-blue);
     margin-bottom: 2rem;
 }
 
 .hero-content p {
-    font-size: 2rem;
-    font-weight: 900;
+    font-size: 2.5rem;
+    font-weight: 400;
     margin-bottom: 2rem;
+    color: var(--agency-blue);
 }
 
 .btn-main {
-    background: var(--agency-yellow);
-    color: var(--agency-black);
+    background: var(--agency-blue);
+    color: var(--agency-white);
     padding: 20px 40px;
     font-family: var(--font-heading);
-    font-weight: 900;
-    font-size: 1.2rem;
-    border: var(--border-thick);
-    border-radius: 12px;
+    font-weight: 400;
+    font-size: 1.8rem;
+    border: 4px double #fff;
     cursor: pointer;
-    box-shadow: 6px 6px 0px var(--agency-black);
-    transition: all 0.1s;
+    box-shadow: 8px 8px 0px var(--agency-blue-light);
+    transition: all 0.1s steps(2);
 }
 
 .btn-main:active {
@@ -259,12 +260,12 @@ section {
 
 /* Secondary Section */
 .secondary {
-    background-color: var(--agency-yellow);
+    background-color: var(--agency-white);
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     align-items: center;
     gap: 4rem;
-    border-bottom: var(--border-thick);
+    border-bottom: var(--border-double);
 }
 
 body.noir-persona .secondary {
@@ -273,11 +274,12 @@ body.noir-persona .secondary {
 
 .lab-section {
     text-align: center; 
-    background: var(--agency-pink); 
-    border-top: var(--border-thick); 
+    background: var(--agency-white); 
+    border-top: var(--border-double); 
     padding-top: 100px; 
     padding-bottom: 150px; 
     margin-top: -5px;
+    border-bottom: var(--border-double);
 }
 
 body.noir-persona .lab-section {
@@ -320,17 +322,24 @@ body.noir-persona .lab-section {
 
 .card:hover {
     transform: translate(-6px, -6px);
-    box-shadow: 18px 18px 0px var(--agency-pink);
-    border-color: var(--agency-pink);
+    box-shadow: 18px 18px 0px var(--agency-blue);
+    border-color: var(--agency-blue);
+    background: var(--agency-blue);
+    color: #fff;
+}
+
+.card:hover h3, .card:hover p, .card:hover a {
+    color: #fff !important;
 }
 
 .project-img {
     width: 100%;
     height: 180px;
     object-fit: cover;
-    border: var(--border-thick);
-    border-radius: 12px;
+    border: 2px solid var(--agency-blue);
+    border-radius: 0;
     margin-bottom: 1.5rem;
+    image-rendering: pixelated;
 }
 
 .card.discovered {
@@ -373,17 +382,17 @@ body.noir-persona .lab-section {
     position: fixed;
     top: 100px;
     right: 30px;
-    background: var(--agency-black);
-    color: var(--agency-yellow);
+    background: var(--agency-white);
+    color: var(--agency-blue);
     padding: 10px 20px;
-    border-radius: 12px;
+    border-radius: 0;
     font-family: var(--font-heading);
-    font-weight: 900;
-    font-size: 1.2rem;
-    box-shadow: 6px 6px 0px var(--agency-pink);
+    font-weight: 400;
+    font-size: 1.8rem;
+    box-shadow: 6px 6px 0px var(--agency-blue);
     z-index: 1001;
-    border: 2px solid #fff;
-    transition: all 0.3s ease;
+    border: 4px double var(--agency-blue);
+    transition: all 0.3s steps(2);
 }
 
 body.noir-persona .xp-counter {
@@ -419,15 +428,16 @@ body.noir-persona .xp-counter {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background: var(--agency-yellow);
-    border: var(--border-thick);
+    background: var(--agency-blue);
+    color: #fff;
+    border: 4px double #fff;
     padding: 20px;
-    border-radius: 12px;
-    font-weight: 900;
-    box-shadow: 6px 6px 0px var(--agency-black);
+    border-radius: 0;
+    font-weight: 400;
+    box-shadow: 8px 8px 0px var(--agency-black);
     z-index: 2000;
     transform: translateY(200px);
-    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: transform 0.4s steps(4);
 }
 
 .snark-popup.active {
