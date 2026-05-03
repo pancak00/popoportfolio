@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // --- SE7EN MODE (CHUNGKING EXPRESS PERSONA) ---
+    // --- SE7EN MODE (CASE FILE PERSONA) ---
     const logo = document.querySelector('.logo');
     const heroTitle = document.getElementById('hero-title');
     const heroSubtitle = document.getElementById('hero-subtitle');
@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         logoClicks++;
         logo.style.transform = 'scale(0.95)';
         setTimeout(() => logo.style.transform = 'scale(1)', 100);
-        playSound(300 + (logoClicks * 100), 'sine', 0.05);
+        playSound(200 + (logoClicks * 50), 'sine', 0.05);
 
         if (logoClicks === 7) {
             triggerNoir();
@@ -120,29 +120,31 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (isNoir) {
             // Hero
-            heroTitle.innerHTML = "i find<br>things.<br><span style='font-size: 2rem; color: var(--noir-accent);'>探偵</span>";
-            heroSubtitle.textContent = "Dreamy city nights. Every data point has a story.";
-            heroDesc.textContent = "We share the same city, but different frequencies. In 0.01ms, our orbits crossed. Private investigation in a world of neon haze.";
-            heroImg.src = "hero-investigator.png";
-            secondaryImg.style.filter = "saturate(2) contrast(1.2) blur(2px)";
+            heroTitle.innerHTML = "i find<br>things.<br><span style='font-size: 1.5rem; background: var(--noir-magenta); color: #fff; padding: 2px 10px;'>CONFIDENTIAL</span>";
+            heroSubtitle.textContent = "Subject: 001. Location: Encrypted. Status: Investigating.";
+            heroDesc.textContent = "Report Summary: This individual does not just process data; they track its shadow. Multiple technical proficiencies detected. Private investigation activities verified. Keep this file secure.";
+            heroImg.src = "projects/typewriter.png";
+            secondaryImg.src = "https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbzJ1Z3R2bDJzMWtsZ3VnY3gyNTdlNTY3cW0yeXAxYmZ6cTJueGJrNSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/31X5ofUNHSjjf0o2KQ/giphy.gif";
+            secondaryImg.style.filter = "grayscale(1) contrast(1.5)";
             
             // Nav
-            navLinks[0].textContent = "INTEL (情報)";
-            navLinks[1].textContent = "FILES (ファイル)";
-            navLinks[2].textContent = "THE SIGNAL (信号)";
+            navLinks[0].textContent = "DOSSIER";
+            navLinks[1].textContent = "EVIDENCE";
+            navLinks[2].textContent = "CONTACT";
             
             // Section Titles
-            skillTreeTitle.innerHTML = "The Case File<br><span style='font-size: 1.5rem; color: var(--noir-accent);'>捜査資料</span>";
-            labTitle.innerHTML = "Report Log<br><span style='font-size: 1.5rem; color: var(--noir-magenta);'>報告ログ</span>";
-            contactTitle.innerHTML = "THE DROPOFF<br><span style='font-size: 1.5rem; color: var(--noir-accent);'>秘密の連絡</span>";
+            skillTreeTitle.innerHTML = "Technical Dossier<br><span style='font-size: 1rem; border: 1px solid var(--noir-accent); padding: 2px 10px;'>CLASSIFIED</span>";
+            labTitle.innerHTML = "Case Evidence Log<br><span style='font-size: 1rem; border: 1px solid var(--noir-accent); padding: 2px 10px;'>EXHIBIT A-D</span>";
+            contactTitle.innerHTML = "SECURE DROPOFF";
 
-            showSnark("SE7EN MODE ACTIVATED. PINEAPPLE DREAMS.");
-            playSound(330, 'sine', 1.5); // Lighter, airy sound
+            showSnark("FILE 007 ACCESSED. WHAT'S IN THE BOX?");
+            playSound(150, 'square', 0.2); 
         } else {
             heroTitle.innerHTML = "i do<br>stuffs.";
             heroSubtitle.textContent = "Developer? Sure. But also other things.";
             heroDesc.textContent = "From building PCs to building backends, and from custom keyboards to custom melodies. I'm essentially a technical swiss-army knife that occasionally needs rebooting.";
             heroImg.src = "hero-agency.png";
+            secondaryImg.src = "secondary-agency.png";
             secondaryImg.style.filter = "none";
             
             // Nav
@@ -155,7 +157,7 @@ document.addEventListener('DOMContentLoaded', () => {
             labTitle.textContent = "The Project Lab";
             contactTitle.textContent = "SAY WHATSUP";
 
-            showSnark("Back to the day job.");
+            showSnark("Dossier closed.");
             playSound(440, 'sine', 0.2);
         }
     };
@@ -177,5 +179,5 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(img);
     });
 
-    console.log("%c--- SE7EN MODE INITIALIZED ---", "color: #00f5d4; font-weight: bold; font-size: 16px;");
+    console.log("%c--- FILE SYSTEM ONLINE ---", "color: #1a1a1a; font-weight: bold; font-size: 16px;");
 });

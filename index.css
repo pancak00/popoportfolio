@@ -7,31 +7,31 @@
     --font-body: 'Inter', sans-serif;
     --border-thick: 3px solid var(--agency-black);
     
-    /* Chungking Persona Variables */
-    --noir-dark: #0d1b2a;
-    --noir-accent: #00f5d4; /* Neon Cyan */
-    --noir-magenta: #ff0054; /* Soft Magenta */
-    --noir-haze: rgba(0, 245, 212, 0.1);
+    /* Case File Persona Variables */
+    --noir-dark: #f0ede5; /* Aged Paper */
+    --noir-accent: #1a1a1a; /* Ink Black */
+    --noir-magenta: #8b0000; /* Dried Blood / Red Ink */
+    --noir-smudge: rgba(0, 0, 0, 0.1);
 }
 
 body.noir-persona {
     background-color: var(--noir-dark);
-    color: #e0e0e0;
+    color: var(--noir-accent);
     font-family: 'Courier Prime', monospace;
-}
-
-body.noir-persona :root {
-    --agency-black: #000000;
+    background-image: 
+        radial-gradient(circle at 10% 20%, var(--noir-smudge) 0%, transparent 20%),
+        radial-gradient(circle at 80% 80%, var(--noir-smudge) 0%, transparent 15%),
+        linear-gradient(45deg, rgba(0,0,0,0.02) 25%, transparent 25%, transparent 75%, rgba(0,0,0,0.02) 75%, rgba(0,0,0,0.02));
+    background-size: 100% 100%, 100% 100%, 20px 20px;
 }
 
 body.noir-persona nav {
-    background: rgba(13, 27, 42, 0.8);
-    border-bottom: 2px solid var(--noir-accent);
-    backdrop-filter: blur(10px);
+    background: var(--noir-dark);
+    border-bottom: 3px solid var(--noir-accent);
 }
 
 body.noir-persona .hero {
-    background-color: var(--noir-dark);
+    background-color: transparent;
     border-bottom: 3px solid var(--noir-accent);
 }
 
@@ -48,28 +48,29 @@ body.noir-persona .btn-main {
 }
 
 body.noir-persona .card {
-    background: rgba(26, 26, 26, 0.6);
+    background: #fff;
     border-color: var(--noir-accent);
-    color: #e0e0e0;
-    box-shadow: 8px 8px 0px var(--noir-magenta);
-    backdrop-filter: blur(8px);
+    color: var(--noir-accent);
+    box-shadow: 10px 10px 0px var(--noir-accent);
+    transform: rotate(1deg); /* Slightly messy file look */
 }
 
 body.noir-persona h1, body.noir-persona h2, body.noir-persona h3 {
-    font-family: var(--font-heading);
+    font-family: 'Courier Prime', monospace;
     text-transform: uppercase;
-    letter-spacing: 4px;
-    text-shadow: 0 0 10px var(--noir-accent);
+    letter-spacing: 2px;
+    text-shadow: none;
+    color: var(--noir-accent);
 }
 
 body.noir-persona .illustration {
-    filter: saturate(1.5) contrast(1.1) brightness(0.9) hue-rotate(180deg);
-    box-shadow: 0 0 40px var(--noir-haze);
+    filter: grayscale(1) contrast(1.5) sepia(0.2);
+    border: 2px solid var(--noir-accent);
 }
 
 body.noir-persona .card:hover {
-    border-color: #fff;
-    box-shadow: 12px 12px 0px var(--noir-accent);
+    transform: rotate(0deg) scale(1.02);
+    box-shadow: 15px 15px 0px var(--noir-magenta);
 }
 
 /* Persona Toggle Button */
@@ -110,8 +111,22 @@ body.noir-persona .persona-toggle {
 
 body.noir-persona .card.investigator-only {
     display: flex;
-    border-color: var(--noir-magenta);
-    box-shadow: 0 0 30px rgba(255, 0, 84, 0.3);
+    border: 5px solid var(--noir-magenta);
+    background: #fff;
+    position: relative;
+}
+
+body.noir-persona .card.investigator-only::after {
+    content: "TOP SECRET";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-30deg);
+    font-size: 3rem;
+    color: rgba(139, 0, 0, 0.2);
+    border: 5px solid rgba(139, 0, 0, 0.2);
+    padding: 10px;
+    pointer-events: none;
 }
 
 body {
