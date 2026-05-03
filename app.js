@@ -143,7 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
             heroTitle.innerHTML = "i do<br>stuffs.";
             heroSubtitle.textContent = "Developer? Sure. But also other things.";
             heroDesc.textContent = "From building PCs to building backends, and from custom keyboards to custom melodies. I'm essentially a technical swiss-army knife that occasionally needs rebooting.";
-            heroImg.src = "hero-agency.png";
+            heroImg.src = "projects/ascii-art.png";
             secondaryImg.src = "secondary-agency.png";
             secondaryImg.style.filter = "none";
             
