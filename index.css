@@ -48,29 +48,53 @@ body.noir-persona .btn-main {
 }
 
 body.noir-persona .card {
-    background: #fff;
-    border-color: var(--noir-accent);
-    color: var(--noir-accent);
-    box-shadow: 10px 10px 0px var(--noir-accent);
-    transform: rotate(1deg); /* Slightly messy file look */
+    background: #fff9c4; /* Legal Pad Yellow */
+    border-left: 5px solid #ff5252; /* Red margin line */
+    border-top: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 3px solid #999;
+    color: #1a1a1a;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+    transform: rotate(-1deg);
+    background-image: linear-gradient(#e1f5fe 1px, transparent 1px);
+    background-size: 100% 25px; /* Notebook lines */
+    padding-top: 3rem;
+    position: relative;
+}
+
+/* Paper Clip Effect */
+body.noir-persona .card::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    width: 15px;
+    height: 40px;
+    background: #999;
+    border-radius: 10px;
+    border: 2px solid #666;
+    z-index: 10;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
 }
 
 body.noir-persona h1, body.noir-persona h2, body.noir-persona h3 {
     font-family: 'Courier Prime', monospace;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     text-shadow: none;
-    color: var(--noir-accent);
+    color: #000;
 }
 
 body.noir-persona .illustration {
-    filter: grayscale(1) contrast(1.5) sepia(0.2);
-    border: 2px solid var(--noir-accent);
+    filter: grayscale(1) contrast(1.2);
+    border: 10px solid #fff; /* Polaroid look */
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.3);
+    padding: 0;
 }
 
 body.noir-persona .card:hover {
-    transform: rotate(0deg) scale(1.02);
-    box-shadow: 15px 15px 0px var(--noir-magenta);
+    transform: rotate(0deg) translateY(-5px);
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.2);
 }
 
 /* Persona Toggle Button */
@@ -111,9 +135,15 @@ body.noir-persona .persona-toggle {
 
 body.noir-persona .card.investigator-only {
     display: flex;
-    border: 5px solid var(--noir-magenta);
     background: #fff;
-    position: relative;
+    border: 2px solid #000;
+    transform: rotate(2deg);
+    box-shadow: 5px 5px 20px rgba(139, 0, 0, 0.4);
+}
+
+body.noir-persona .card.investigator-only::before {
+    background: #8b0000; /* Red paper clip for danger */
+    border-color: #5a0000;
 }
 
 body.noir-persona .card.investigator-only::after {
