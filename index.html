@@ -3,382 +3,347 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JUST.ME | Polymath Portfolio</title>
+    <title>JUST.ME | Creative Polymath & Full-Stack Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;900&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="index.css">
-    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="xp-counter" class="xp-counter">LVL 1 | XP 0</div>
-    <div id="snark-popup" class="snark-popup"></div>
-    <nav>
-        <div class="logo">JUST.ME</div>
-        <ul>
-            <li><a href="#about">The Vibe</a></li>
-            <li><a href="#skills">The Stuffs</a></li>
-            <li><a href="#project-lab">The Lab</a></li>
-            <li><a href="#contact">The Signal</a></li>
-            <li><a href="#contact" class="nav-btn">Hire Me</a></li>
-        </ul>
-    </nav>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">JUST<span>.</span>ME</div>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">The Vibe</a></li>
+                <li><a href="#skills" class="nav-link">The Stuffs</a></li>
+                <li><a href="#project-lab" class="nav-link">The Lab</a></li>
+                <li><a href="#contact" class="nav-btn">Hire Me</a></li>
+            </ul>
+            <div class="menu-toggle" id="mobile-menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
 
     <main>
-        <section class="hero">
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-bg-glow"></div>
             <div class="hero-content">
-                <h1 id="hero-title">i do<br>stuffs.</h1>
-                <p id="hero-subtitle">Developer? Sure. But also other things.</p>
-                <div id="hero-desc" style="font-size: 1.5rem; max-width: 600px; margin-bottom: 2rem;">
-                    From building PCs to building backends, and from custom keyboards to custom melodies. I'm essentially a technical swiss-army knife that occasionally needs rebooting.
+                <h1 class="hero-title"><span class="gradient-text">i do<br>stuffs.</span></h1>
+                <p class="hero-subtitle">Developer? Sure. But also other things.</p>
+                <p class="hero-desc">
+                    From building PCs to building backends, and from custom keyboards to custom melodies. I'm essentially a technical Swiss Army knife that occasionally needs rebooting.
+                </p>
+                <div class="hero-actions">
+                    <a href="#contact" class="btn btn-primary">Let's Connect</a>
+                    <a href="#project-lab" class="btn btn-secondary">Explore Work</a>
                 </div>
-                <a href="#contact" class="btn-main" id="plans-btn-hero" style="text-decoration: none; display: inline-block;">Hire Me</a>
             </div>
-            <div class="illustration-container">
-                <pre class="ascii-art ascii-hero" id="hero-ascii">
-    . . .  .                   ..       .                      ..        . .                        
-            . .             .     .              ...........      .                    .     .  .   
-                     .   ..                  .....::-:.......                         . .           
-                           ..    ..............:=+++*##%*=:......         .     .    .      .   .   
-                                  .....-++=-::-*###%%%%%%%%##=:..                                   
-        .   .   .   .           ..:+##%%%%%%%##%%%@@@@@@%%%%%#%*:..                   .             
-                             ...-*%%%%@%@@@@%%%%@@@@@@@@@@@@%%%%#-....                              
-           .            .  ...-#%%@%%@@@@@@@@@@@@@@@@@@@@@@@@@%%%#-...                       .      
-    .                   ....-#%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%*:..                              
-           .        ..  ...#%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%#:.                              
-                .     ...:+%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%#=..                            
-                      ..+##%@@@@@@@@@@@@@@@@@@@@%%%%%%%@@@@@@@@@@%%%%*:...             .            
-      .                ..-#%@@@@@@@@@@@@@@@@@@@%%######%%@@@@@@@@%%%%%#=..                          
-          .  .         ..:#%@@@@@@@@@@@@@@%%%%%##******###%%@@@@@@%%%%#-..                          
-                       ...+%@@@@@@@@@@@@%%%%%###*********###%%@@%%%%%%#-..                        . 
-                    .   ...*@@@@@@@%%%%%%%%%###******++*****#%%%%%%%%#=..         .                 
-                        . .+%@@@@@%%#%%%#####****************#%%%%%%%#-. .                         .
-                     .  . .+%@@@@%##%%%##****++++++++++++******%%%%%%#:. . .                        
-                      . ....*@@@########%%##*++++++**####*****+*%%%%#-..                            
- .             .        ....-%@%#*****#**##***+++++++****++===++#%%%+...    .             .         
-           .      .     ...:*%@%***#%%%@%####**++++**#%%##*++==+#%%*+:....   .  .                   
-                        ...:*#%#***###########**+++**##%#***++=+*%#=+-....                   .      
-           .            ....=#%#***********#*****++++***++++++++*%*==:.. .      .                   
-               .    .   ....:*%#****************++++++++++++====+#*=-..                .    .       
-                           ..+##***********##***++++++++++++====+#+=..                              
-                           ..-*#***************++===++++++======*+=:..        .     .               
-      .                      .+***********#####*+***+++++=======+=:...                              
-                             ..:+***********###****+++++=======-::....              .               
-          .         .        ...:*******#######****+++++=======:.        .              .        .  
-  ..                         ....+#****###%%######*****+=======..  .                                
-   ..                            :*#***#######****++++++======:.                                    
-                               . .:*######*******+++=========:...                                   
-  .                              ..=######******++++======+=-....                                   
-                                 ..=*#######****+++====+++==-....       .       .            .    . 
-        .                      ..:*+*########****+++++++====-=... .            .     .              
-    .                        ...-%+=***########***++++======-:#-......                .    .        
- .   .                     ....*@%==+****#####*++++++=======:.=%#:....                              
-                      ......-#@@@#=--=*****##***+++========:..-%%%%+:..... .  .                  .  
-                      ..:*#%@@@@@%+=---=********++======+-....-%%%%%%%%*-..                     .   
-                 ..:=#@@@@@@@@@@@@*=------+****+++===++=......+@@%%%%@@@@@%#=:...                   
-      .........:*%@@@@@@@@@@@@@@@@#+=-----:-=++++++**=:......:#@@%%%%@@@@@@@@@@%*:...               
-    ......:-+%@@@@@@@@@@@@@@@@@@@@%*==---:::::-+***=:.......:=%@@@@%%@@@@@@@@@@@@@@%+:......        
-.....:+#%@@@@@@@@@@@@@@@@@@@@@@@@@%++===---::-+#**#-::......-+#@@@@@@@@@@@@@@@@@@@@@@@@%#*-.....    
-.-#%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*=====---+@@@@@%%#-.....:-+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#:...  
-.#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#+====-=%@@@@@@%%%%*-...:-+%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%#..   
--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#+=---=*#%@@@@@%%%++++-.:=*%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%-.   
--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%++--==++*#@@@@%#=-------+*%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%=.   
--@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+--=--==++*@@@%+-------=+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%*:.. 
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*-==---==+%@@%%*-------=+*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%=. 
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%===---=+#@@@%%%+-----==+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%#: 
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%+==---=*@@@@%%%%+==--=++%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%*. 
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*==---=#@@@@%%%%#=---=+*%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%#-.
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%==---+@@@@@%%%%%+---++*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%%*.
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@+==--*@@@@@%%%%%*=--+*#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%%%#:
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#+=-=#@@@@@%%%%%#=--+*%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%%%%=
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*=-=%@@@@@%%%%%#+==+#@@@@@@@@@@@@@@@@@@@@@%%@@@%%%@@%%%%%%%%*
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#=:=%@@@@@%%%%%%+==*#@@@@@@@@@@@@@@@@@@@@%%%%%%%%@@@%%%%%%%%#
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%=:=%@@@@@@%%%%%*==*%@@@@@@@@@@@@@@@@@@@%%%%@@%%%@@@%%%%%%%%%
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=:=%@@@@@@@@@@@*++*@@@@@@@@@@@@@@@@@@@@@@@@@@%%@@@@%%%%%%%%%
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#:+%@@@@@@@@@@@#++*@@@@@@@@@@@@@@@@@@@@@%%%%%%%@@@@%%%%%%%%%
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=+%@@@@@@@@@@@#++#@@@@@@@@@@@@@@@@@@@@%%%%%%%@@@@@@@%%%%%%%
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@#*@@@@@@@@@@@@#+*@@@@@@@@@@@@@@@@@@@@%%%%%%%@@@@@@@@%%@@%%%
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%#@@@@@@@@@@@@%*#@@@@@@@@@@@@@@@@@@@@@@%%%%%@@@@@@@@%@@@@%%
-                </pre>
+            <div class="hero-visual">
+                <div class="tech-config-card scroll-reveal">
+                    <div class="card-header-bar">
+                        <div class="dots-wrap">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <span class="card-filename">welcome.sh</span>
+                    </div>
+                    <div class="code-body">
+                        <div class="terminal-typing-wrap">
+                            <span class="terminal-prompt">$</span>
+                            <span id="typing-text" class="typing-text"></span>
+                            <span class="typing-cursor">|</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section id="about" class="secondary">
-            <div class="illustration-container">
-                <pre class="ascii-art ascii-secondary">
-   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
-   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
-   %%%%%##%%%#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
-   %%%%%%%%%#####%#######%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
-   %###%%######################%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
-   ##########################################%%%%%%%#%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%   
-   #############################################################%%%%%%###############%%%%%%%%%%####%%%%%%%%%%%%%%%%%%%%%%%%%   
-   #########################################################################################################%%%#####%%%%%%%%   
-   #######################################################################################################%############%%%%%   
-   #########################################################################################################################   
-   #########################################################################################################################   
-   #########################################################################################################################   
-   #########################################################################################################################   
-   ######################################################**++++*%###########################################################   
-   ###################################################********@@#****#######################################################   
-   #################################################*******%@%*+#@%*+*#%%%%#################################################   
-   ################################################********@@#****#@%####%%@@%%%%#############################################   
-   #######################################************#@@*********#####@@@%@@@@%%%%%#**#####################################   
-   #################################****************@@#********#####%@@@#******%%%%%%%%%###*################################   
-   #############################******************@@#********#####%@@%#*****#%%%%%%%%%%%%%%%################################   
-   ##########################******************************#####@@@%***++*#%%%%%%%%%%@@@@@@@%%%%%##*########################   
-   ####################*********************%@@##*********#%%#@@@#*+***#%%%%%%%%%%%@@@@@@@@@@@@%%%%%%%######################   
-   ################**********************#@@#******###*******#%@%##**#%%%%%%%%%%%@@@@@@@@@@@@@%%%%%@@@@**###################   
-   #############***********************%@%**************##*******#%@%%%%%%%%%%@@@@@@@@@@@@@%%%%%%@@@%*********##############   
-   ############**********************@@**********************#********#%@%%%@@@@@@@@@@@@%%%%%%%@@@********+*******##########   
-   ######*************************%@#********************#%@@@@@@@%#******#%%%%@@@@@@@%%%%%%%@@%*********@@#****%@%*########   
-   ####*************************%%********************%@@@%%%%%%%@@@@@#*******#%%%%@%%%%%%%@@%*********#@@@@##%@@@%*########   
-   ##************************#@@#********************@@#%@@@%%@@@@%%%%@%*#********#%%%%%@@@#***************#%@@@@@#*########   
-   ************************%@%**++**##**************#@%#%%%%@@@@@%%%%#%@+***####******###****************#@@@@@@@@#**#######   
-   *********************#@%**++++**+++**##***********#@@%#@@@@%%%@%%%@@#+********###******************#%@@@@@@@@@@#****#####   
-   *************@@#+**%@%*+++++**++++**++++*##*********#@@@@%#%%%%@@@%#**************###************#@@@@@@@@@@@@@##########   
-   *********+*@@@@@*@@**++++**++++***++++**++++*##****************************************+*******#@@@@@@@@@@@@@@@@@%%######   
-   ********#**++*#%#+*+++***++++***+++***+++***++++*##******************************************%@@@@@@@@@@@@@@@@@@@@@@@%%%#   
-   *******+%@@%@@#+++++***+++***++++**++++***+++****+++###************************************%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   
-   ******++%%%%@@@%##**+++****+++***+++****++*****++****++*###*****************************#%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   
-   *****+++#@@%%@@@@@@%##**+++****++*****++****++****+++****++**##***********************#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   
-   ****++++#@@@@@@@@@@@@@@%#***+++****++****+++****++****++*****+**###*****************#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   
-   ****++++#%%@@@@%%%@@@%%%@@@%#***++*****++****++***#*+***#*+***#*++**###***********#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   
-   ******+++%@@%@@@@@@%%%@@@%%%@@@#*#*++++*#*+++*#**+++*#*++**##+++**#*+*%*********%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@   
-   **********##%@@@@@@@@@%%%@@@%%%@@@%##**++++***+++*#**++**#*****#****@%********%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%   
-   **********#####%@@@@@@@%%%%%%@@@@%%@@@%##**+++*#*********++*#*****%%*******#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%   
-   **********#########%@@@@@@@%%%%%@@@@%%@@@@%##**++************+*#%#*******#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%   
-   ##*#******############%%@@@@@@%%%%%%@@@@%%@@@@%#***++********#%#*******#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%%##   
-   ####*****#################%@@@@@@%%@%%%@@@@%%%@@@%#***+++**%%#@@%****#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%####   
-   ######*#*####################%%@@@@@@%%%%%%@@@@%%@@@@%#**%%*#@@@@@*%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%######   
-   #################################%%@@@@@%%@%%%%%@@@%%@@@@%*******#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%########   
-   #####################################%@@@@@@@@%%%%%@@@@@@@@@%##@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%%##########   
-   ########################################%%@@@@@@@@%%%%@@@@%%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%#############   
-   ############################################%@@@@@@@@@%%@@@@%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%###############   
-   ###############################################%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%#################   
-   ###################################################%%@@@@%%@@@%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%###################   
-   #######################################################%%@@@%%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%%#####################   
-   ############################################################%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%########################   
-   ###############################################################%@@@@@@@@@@@@@@@@@@@@@@@@@%%%%%%##########################   
-   ###################################################################%%@@@@@@@@@@@@@@@@@@%%%%%%############################   
-   #######################################################################%%%@@@@@@@@@@@%%%%%%##############################   
-   ############################################################################%%%@@@%%%%%%#################################   
-   ################################################################################%%%%%%###################################   
-                </pre>
+        <!-- About/Vibe Section -->
+        <section id="about" class="about-section">
+            <div class="about-visual">
+                <div class="visualizer-card scroll-reveal">
+                    <div class="card-header-bar">
+                        <div class="dots-wrap">
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                        <span class="card-filename">acoustic_spectrum.sh</span>
+                    </div>
+                    <div class="visualizer-body">
+                        <div class="visualizer-bars">
+                            <span class="bar bar-1"></span>
+                            <span class="bar bar-2"></span>
+                            <span class="bar bar-3"></span>
+                            <span class="bar bar-4"></span>
+                            <span class="bar bar-5"></span>
+                            <span class="bar bar-6"></span>
+                            <span class="bar bar-7"></span>
+                            <span class="bar bar-8"></span>
+                            <span class="bar bar-9"></span>
+                            <span class="bar bar-10"></span>
+                            <span class="bar bar-11"></span>
+                            <span class="bar bar-12"></span>
+                            <span class="bar bar-13"></span>
+                            <span class="bar bar-14"></span>
+                            <span class="bar bar-15"></span>
+                            <span class="bar bar-16"></span>
+                        </div>
+                        <div class="visualizer-meta">
+                            <span class="freq-label">20Hz</span>
+                            <span class="freq-title">ANALOG FREQ SATURATION</span>
+                            <span class="freq-label">20kHz</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="text-content">
-                <h2>My interests<br>have interests.</h2>
-                <p style="font-size: 1.5rem;">
-                    I don't just sit in front of a terminal all day. I'm the guy you call when your disk fails, your Hackintosh won't boot, or you need a guitarist/vocalist for your band. 
+            <div class="about-content">
+                <h2 class="section-title"><span class="gradient-text">My interests<br>have interests.</span></h2>
+                <p class="about-desc">
+                    I don't just sit in front of a terminal all day. I'm the guy you call when your disk fails, your Hackintosh won't boot, or you need a guitarist/vocalist for your band.
+                </p>
+                <p class="about-desc">
                     I build custom keyboards, tinker with Arduino, and write technical guides because someone has to. I also do music production and sound design, because silence is boring.
                 </p>
             </div>
         </section>
 
-        <section id="skills" class="how-it-works">
-            <h2 style="font-family: var(--font-heading); font-size: 4rem;">The Skill Tree</h2>
-            <div class="card-grid">
+        <!-- Skills Section -->
+        <section id="skills" class="skills-section">
+            <div class="skills-header">
+                <h2 class="section-title text-center"><span class="gradient-text">The Skill Tree</span></h2>
+                <p class="section-subtitle text-center">A comprehensive look at the digital and physical crafts I've refined over the years.</p>
+            </div>
+            <div class="skills-grid">
                 <!-- Skill 1 -->
-                <div class="card" data-snark="Making Apple software run on non-Apple hardware is my love language.">
-                    <div class="card-content">
-                        <span class="level-tag">LVL 99</span>
-                        <div class="card-icon">🍎</div>
-                        <h3>Hackintoshing</h3>
-                        <p>I can make macOS run on almost anything. It's a dark art involving kexts and bootloaders.</p>
-                        <div class="xp-container"><div class="xp-bar" style="width: 95%"></div></div>
+                <div class="skill-card scroll-reveal">
+                    <div class="skill-icon-wrap">
+                        <span class="skill-icon">🍎</span>
                     </div>
+                    <h3 class="skill-title">Hackintoshing</h3>
+                    <p class="skill-text">Making macOS run beautifully on non-Apple hardware. A fine art of bootloaders and ACPI patching.</p>
                 </div>
                 <!-- Skill 2 -->
-                <div class="card" data-snark="The thock is real.">
-                    <div class="card-content">
-                        <span class="level-tag">LVL 85</span>
-                        <div class="card-icon">⌨️</div>
-                        <h3>Custom Keyboards</h3>
-                        <p>Lubing switches, soldering PCBs, and chasing the perfect sound profile.</p>
-                        <div class="xp-container"><div class="xp-bar" style="width: 85%"></div></div>
+                <div class="skill-card scroll-reveal">
+                    <div class="skill-icon-wrap">
+                        <span class="skill-icon">⌨️</span>
                     </div>
+                    <h3 class="skill-title">Custom Keyboards</h3>
+                    <p class="skill-text">Lubing switches, soldering PCBs, and chasing the perfect sound profile for the ultimate typing experience.</p>
                 </div>
                 <!-- Skill 3 -->
-                <div class="card" data-snark="I'm a guitarist, but I promise I'm not that loud. (Lies).">
-                    <div class="card-content">
-                        <span class="level-tag">LVL 90</span>
-                        <div class="card-icon">🎸</div>
-                        <h3>Band & Performance</h3>
-                        <p>Songwriting, arranging, rhythm and lead guitar, and vocals. Crafting tracks from scratch.</p>
-                        <div class="xp-container"><div class="xp-bar" style="width: 90%"></div></div>
+                <div class="skill-card scroll-reveal">
+                    <div class="skill-icon-wrap">
+                        <span class="skill-icon">🎸</span>
                     </div>
+                    <h3 class="skill-title">Band & Performance</h3>
+                    <p class="skill-text">Songwriting, rhythm and lead guitar, vocals, and stage arrangement. Crafting memorable tunes from scratch.</p>
                 </div>
                 <!-- Skill 4 -->
-                <div class="card" data-snark="I blink LEDs for fun.">
-                    <div class="card-content">
-                        <span class="level-tag">LVL 70</span>
-                        <div class="card-icon">🤖</div>
-                        <h3>Arduino & Embedded</h3>
-                        <p>Tinkering with microcontrollers, sensors, and hardware logic.</p>
-                        <div class="xp-container"><div class="xp-bar" style="width: 70%"></div></div>
+                <div class="skill-card scroll-reveal">
+                    <div class="skill-icon-wrap">
+                        <span class="skill-icon">🤖</span>
                     </div>
+                    <h3 class="skill-title">Arduino & Embedded</h3>
+                    <p class="skill-text">Tinkering with microcontrollers, customized sensor packages, and automated physical logic gates.</p>
                 </div>
                 <!-- Skill 5 -->
-                <div class="card" data-snark="Cable management is my cardio.">
-                    <div class="card-content">
-                        <span class="level-tag">LVL 80</span>
-                        <div class="card-icon">🖥️</div>
-                        <h3>PC Building</h3>
-                        <p>Custom loops, air-cooled monsters, and workstation rigs.</p>
-                        <div class="xp-container"><div class="xp-bar" style="width: 80%"></div></div>
+                <div class="skill-card scroll-reveal">
+                    <div class="skill-icon-wrap">
+                        <span class="skill-icon">🖥️</span>
                     </div>
+                    <h3 class="skill-title">PC Building</h3>
+                    <p class="skill-text">Assembling heavy-duty workstations, custom water loops, and extremely optimized air-cooled rigs.</p>
                 </div>
                 <!-- Skill 6 -->
-                <div class="card" data-snark="I've seen things you wouldn't believe.">
-                    <div class="card-content">
-                        <span class="level-tag">LVL 65</span>
-                        <div class="card-icon">💾</div>
-                        <h3>Disk Recovery</h3>
-                        <p>Bringing files back from the dead. Deleted, corrupted, or plain stubborn.</p>
-                        <div class="xp-container"><div class="xp-bar" style="width: 65%"></div></div>
+                <div class="skill-card scroll-reveal">
+                    <div class="skill-icon-wrap">
+                        <span class="skill-icon">💾</span>
                     </div>
+                    <h3 class="skill-title">Disk Recovery</h3>
+                    <p class="skill-text">Extracting valuable files from corrupted filesystems, bricked drives, and deleted partition states.</p>
                 </div>
                 <!-- Skill 7 -->
-                <div class="card" data-snark="Did you try turning it off and on again?">
-                    <div class="card-content">
-                        <span class="level-tag">LVL 75</span>
-                        <div class="card-icon">🛠️</div>
-                        <h3>HW Troubleshooting</h3>
-                        <p>Diagnosing hardware failure before you buy a new one.</p>
-                        <div class="xp-container"><div class="xp-bar" style="width: 75%"></div></div>
+                <div class="skill-card scroll-reveal">
+                    <div class="skill-icon-wrap">
+                        <span class="skill-icon">🛠️</span>
                     </div>
+                    <h3 class="skill-title">HW Troubleshooting</h3>
+                    <p class="skill-text">Surgical hardware diagnostics. Pinpointing component failures to prevent expensive replacements.</p>
                 </div>
                 <!-- Skill 8 -->
-                <div class="card" data-snark="Code is just my way of talking to ghosts in the machine.">
-                    <div class="card-content">
-                        <span class="level-tag">LVL 99</span>
-                        <div class="card-icon">💻</div>
-                        <h3>Software Dev</h3>
-                        <p>Architecting digital universes. I speak Fluent Python, JS, and occasional C++ when I'm feeling brave.</p>
-                        <div class="xp-container"><div class="xp-bar" style="width: 95%"></div></div>
+                <div class="skill-card scroll-reveal">
+                    <div class="skill-icon-wrap">
+                        <span class="skill-icon">💻</span>
                     </div>
+                    <h3 class="skill-title">Software Dev</h3>
+                    <p class="skill-text">Building modern applications in Python, JavaScript, and C++. Clean architectures and modular coding systems.</p>
                 </div>
                 <!-- Skill 9 -->
-                <div class="card" data-snark="Whitespace is your friend.">
-                    <div class="card-content">
-                        <span class="level-tag">LVL 82</span>
-                        <div class="card-icon">🎨</div>
-                        <h3>UI/UX Design</h3>
-                        <p>Designing interfaces that don't hurt to look at. Focus on flow and accessibility.</p>
-                        <div class="xp-container"><div class="xp-bar" style="width: 82%"></div></div>
+                <div class="skill-card scroll-reveal">
+                    <div class="skill-icon-wrap">
+                        <span class="skill-icon">🎨</span>
                     </div>
+                    <h3 class="skill-title">UI/UX Design</h3>
+                    <p class="skill-text">Creating digital interfaces that are intuitive, satisfying, and beautiful to interact with daily.</p>
                 </div>
                 <!-- Skill 10 -->
-                <div class="card" data-snark="The perfect snare doesn't exi—">
-                    <div class="card-content">
-                        <span class="level-tag">LVL 78</span>
-                        <div class="card-icon">🔊</div>
-                        <h3>Sound Design</h3>
-                        <p>Music production and sonic atmosphere. Shaping sound waves for emotional impact.</p>
-                        <div class="xp-container"><div class="xp-bar" style="width: 78%"></div></div>
+                <div class="skill-card scroll-reveal">
+                    <div class="skill-icon-wrap">
+                        <span class="skill-icon">🔊</span>
                     </div>
+                    <h3 class="skill-title">Sound Design</h3>
+                    <p class="skill-text">Production, synthesis, and acoustic sculpting to create rich atmospheres and high-fidelity audioscapes.</p>
                 </div>
                 <!-- Skill 11 -->
-                <div class="card" data-snark="Merge conflicts are my specialty.">
-                    <div class="card-content">
-                        <span class="level-tag">LVL 92</span>
-                        <div class="card-icon">🐙</div>
-                        <h3>GitHub Collab</h3>
-                        <p>Standardizing git workflows, code reviews, and project management.</p>
-                        <div class="xp-container"><div class="xp-bar" style="width: 92%"></div></div>
+                <div class="skill-card scroll-reveal">
+                    <div class="skill-icon-wrap">
+                        <span class="skill-icon">🐙</span>
                     </div>
+                    <h3 class="skill-title">GitHub Collaboration</h3>
+                    <p class="skill-text">Streamlining repository architecture, automated CI/CD runs, and strict team branching models.</p>
                 </div>
                 <!-- Skill 12 -->
-                <div class="card" data-snark="I'm not the 'best', but I'm probably the most honest.">
-                    <div class="card-content">
-                        <span class="level-tag">LVL 95</span>
-                        <div class="card-icon">✍️</div>
-                        <h3>Technical Writing</h3>
-                        <p>Explaining complex stuff in simple ways. Documentation, guides, and tutorials.</p>
-                        <div class="xp-container"><div class="xp-bar" style="width: 95%"></div></div>
+                <div class="skill-card scroll-reveal">
+                    <div class="skill-icon-wrap">
+                        <span class="skill-icon">✍️</span>
                     </div>
+                    <h3 class="skill-title">Technical Writing</h3>
+                    <p class="skill-text">Demystifying abstract systems and engineering frameworks through crisp, friendly documentation.</p>
                 </div>
-                <!-- Skill 13: Private Investigation (Hidden by default) -->
-                <div class="card investigator-only" data-snark="I find things that don't want to be found.">
-                    <div class="card-content">
-                        <span class="level-tag">LVL 75</span>
-                        <div class="card-icon">🕵️</div>
-                        <h3>Investigation</h3>
-                        <p>Private investigations on the side. Gathering intel, tracing digital footprints, and uncovering the truth.</p>
-                        <div class="xp-container"><div class="xp-bar" style="width: 75%; background: var(--noir-magenta);"></div></div>
+                <!-- Skill 13 -->
+                <div class="skill-card scroll-reveal">
+                    <div class="skill-icon-wrap">
+                        <span class="skill-icon">🕵️</span>
                     </div>
+                    <h3 class="skill-title">Investigations</h3>
+                    <p class="skill-text">Private research, tracking digital footprints, OSINT operations, and tracing complex histories.</p>
                 </div>
             </div>
         </section>
 
-        <section id="project-lab" class="lab-section">
-            <h2 style="font-family: var(--font-heading); font-size: 5rem; margin-bottom: 4rem;">The Project Lab</h2>
-            <div class="card-grid" style="padding: 0 5%;">
-                <article class="card" data-snark="Saving lives, one vaccine at a time. (Design & QA Edition).">
-                    <div class="card-content">
+        <!-- Project Lab Section -->
+        <section id="project-lab" class="projects-section">
+            <div class="projects-header">
+                <h2 class="section-title text-center"><span class="gradient-text">The Project Lab</span></h2>
+                <p class="section-subtitle text-center">Selected works crossing full-stack engineering, sound simulation, and medical support systems.</p>
+            </div>
+            <div class="projects-grid">
+                <!-- Project 1 -->
+                <article class="project-card scroll-reveal">
+                    <div class="project-img-wrap">
                         <img src="projects/rabiesresq.png" alt="RabiesResQ Screenshot" class="project-img">
-                        <h3>RabiesResQ</h3>
-                        <p>Full-stack clinical rabies management. My role: UI/UX Designer, QA Tester, and Technical Writer.</p>
-                        <div style="margin-top: auto; font-weight: 400; color: var(--agency-blue); margin-bottom: 10px;">[ UI/UX / QA / TECH_DOCS ]</div>
-                        <a href="https://rabiesresq.pythonanywhere.com/login" target="_blank" style="color: var(--agency-blue); font-weight: 400; text-decoration: underline;">Open App</a>
                     </div>
-                </article>
-                <article class="card" data-snark="Terminal vibes are the only vibes.">
-                    <div class="card-content">
-                        <div class="project-img meta-placeholder">
-                            <div class="recursive-text">PORTFOLIO-CEPTION</div>
-                            <div class="recursive-sub">Yes, you're currently looking at the website that you're currently looking at. Mind blown?</div>
+                    <div class="project-body">
+                        <h3 class="project-title">RabiesResQ</h3>
+                        <p class="project-desc">A full-stack, enterprise-grade rabies clinical dashboard. Refined UI layout, strict QA test cases, and high-fidelity technical manuals.</p>
+                        <div class="project-tags">
+                            <span class="tag">UI/UX</span>
+                            <span class="tag">QA Testing</span>
+                            <span class="tag">Technical Docs</span>
                         </div>
-                        <h3>This Portfolio</h3>
-                        <p>A retro-modern terminal experience. Gamified, interactive, and full of hidden secrets.</p>
-                        <div style="margin-top: auto; font-weight: 400; color: var(--agency-blue); margin-bottom: 10px;">[ HTML / CSS / JS ]</div>
-                        <a href="#" style="color: var(--agency-blue); font-weight: 400; text-decoration: underline;">You're here.</a>
+                        <a href="https://rabiesresq.pythonanywhere.com/login" target="_blank" class="project-link">Launch Live App <span>→</span></a>
                     </div>
                 </article>
-                <article class="card" data-snark="Dear Diary, today the terminal was particularly helpful.">
-                    <div class="card-content">
-                        <img src="projects/addit '87.png" alt="Addit '87" class="project-img">
-                        <h3>Addit '87</h3>
-                        <p>A terminal-based diary system. Secure, minimalist, and perfectly retro.</p>
-                        <div style="margin-top: auto; font-weight: 400; color: var(--agency-blue); margin-bottom: 10px;">[ TERMINAL / DIARY ]</div>
-                        <a href="#" style="color: var(--agency-blue); font-weight: 400; text-decoration: underline;">Read Logs</a>
+
+                <!-- Project 2 -->
+                <article class="project-card scroll-reveal">
+                    <div class="project-img-wrap">
+                        <div class="project-placeholder">
+                            <div class="placeholder-icon">🪞</div>
+                            <div class="recursive-title">PORTFOLIO-CEPTION</div>
+                            <p class="placeholder-text">A modern masterpiece built with zero CSS frameworks, custom layout layers, and absolute responsiveness.</p>
+                        </div>
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">This Portfolio</h3>
+                        <p class="project-desc">The high-attitude, modern, glassmorphic portfolio you are currently browsing. Smooth scroll animations, custom theme accents, and dynamic interaction.</p>
+                        <div class="project-tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">Vanilla CSS3</span>
+                            <span class="tag">Node.js</span>
+                        </div>
+                        <a href="#" class="project-link">Explore Codebase <span>→</span></a>
                     </div>
                 </article>
-                <article class="card" data-snark="1 + 1 = 10 (in binary).">
-                    <div class="card-content">
-                        <img src="projects/webcalc.png" alt="WebCalc" class="project-img">
-                        <h3>Retro Calculator</h3>
-                        <p>High-precision calculation engine with a pixel-perfect interface.</p>
-                        <div style="margin-top: auto; font-weight: 400; color: var(--agency-blue); margin-bottom: 10px;">[ JS / MATH.LIB ]</div>
-                        <a href="#" style="color: var(--agency-blue); font-weight: 400; text-decoration: underline;">Compute</a>
+
+                <!-- Project 3 -->
+                <article class="project-card scroll-reveal">
+                    <div class="project-img-wrap">
+                        <img src="projects/addit '87.png" alt="Addit '87 Screenshot" class="project-img">
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Addit '87</h3>
+                        <p class="project-desc">A secure, ultra-minimalist terminal diary application. Designed to feel retro but execute modern state protection and local encryption logs.</p>
+                        <div class="project-tags">
+                            <span class="tag">Terminal UI</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Data Protection</span>
+                        </div>
+                        <a href="#" class="project-link">View Repository <span>→</span></a>
                     </div>
                 </article>
-                <article class="card" data-snark="Analog warmth in a digital world.">
-                    <div class="card-content">
-                        <img src="projects/retro tape player.png" alt="Tape Player" class="project-img">
-                        <h3>Pancak</h3>
-                        <p>Virtual analog tape simulation. For that warm, fuzzy feeling.</p>
-                        <div style="margin-top: auto; font-weight: 400; color: var(--agency-blue); margin-bottom: 10px;">[ AUDIO_API / DSP ]</div>
-                        <a href="#" style="color: var(--agency-blue); font-weight: 400; text-decoration: underline;">Play Tape</a>
+
+                <!-- Project 4 -->
+                <article class="project-card scroll-reveal">
+                    <div class="project-img-wrap">
+                        <img src="projects/webcalc.png" alt="WebCalc Screenshot" class="project-img">
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Retro Calculator</h3>
+                        <p class="project-desc">A mathematically rigorous high-precision calculation system dressed in a gorgeous vintage engineering chassis with fluid key responsiveness.</p>
+                        <div class="project-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">CSS Grid</span>
+                            <span class="tag">Math Engine</span>
+                        </div>
+                        <a href="#" class="project-link">Run Calculator <span>→</span></a>
+                    </div>
+                </article>
+
+                <!-- Project 5 -->
+                <article class="project-card scroll-reveal">
+                    <div class="project-img-wrap">
+                        <img src="projects/retro tape player.png" alt="Pancak Screenshot" class="project-img">
+                    </div>
+                    <div class="project-body">
+                        <h3 class="project-title">Pancak Simulation</h3>
+                        <p class="project-desc">A real-time Web Audio simulation recreating the classic analog tape sound. Adds natural warmth, saturation, and wow-and-flutter tape effects.</p>
+                        <div class="project-tags">
+                            <span class="tag">Web Audio API</span>
+                            <span class="tag">DSP</span>
+                            <span class="tag">Audio Synth</span>
+                        </div>
+                        <a href="#" class="project-link">Play Tape <span>→</span></a>
                     </div>
                 </article>
             </div>
         </section>
 
-        <section id="contact" style="padding: 100px 5%; text-align: center; background: var(--agency-white); border-top: var(--border-double);">
-            <h2 style="font-family: var(--font-heading); font-size: 5rem; margin-bottom: 2rem;">SAY WHATSUP</h2>
-            <p style="font-size: 1.5rem; margin-bottom: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-                Whether you need a full-stack dev, a rhythm guitarist, or just someone to fix your Hackintosh—I'm usually around.
-            </p>
-            <div style="display: flex; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-                <a href="mailto:stratstrat120@gmail.com" class="btn-main" style="text-decoration: none;">Email Me</a>
-                <a href="https://github.com/pancak00" target="_blank" class="btn-main" style="text-decoration: none;">My GitHub</a>
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section">
+            <div class="contact-bg-glow"></div>
+            <div class="contact-content scroll-reveal">
+                <h2 class="section-title text-center">SAY <span class="gradient-text">WHATSUP</span></h2>
+                <p class="contact-subtitle text-center">
+                    Whether you need a full-stack engineer, a custom hardware builder, or just someone to fix your bootloader—I'm usually around. Let's make something incredible together.
+                </p>
+                <div class="contact-actions">
+                    <a href="mailto:stratstrat120@gmail.com" class="btn btn-primary">Email Me</a>
+                    <a href="https://github.com/pancak00" target="_blank" class="btn btn-secondary">Explore GitHub</a>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer>
-        &copy; 2026 JUST.ME // [ ALL_SYSTEMS_GO ]
+    <footer class="footer">
+        <div class="footer-container">
+            <p class="copyright">&copy; 2026 JUST.ME // Built with passion and pure Vanilla CSS</p>
+        </div>
     </footer>
 
     <script src="app.js"></script>
