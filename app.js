@@ -79,7 +79,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- 5. Cozy Soft 3D Mouse Tilt Effect ---
-    const tiltCards = document.querySelectorAll('.tech-config-card, .visualizer-card');
+    const heroSection = document.querySelector('.hero-section');
+
+    const createHeroParticles = () => {
+        if (!heroSection) return;
+
+        const particleCount = 12;
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('span');
+            particle.className = 'hero-particle';
+
+            const size = 6 + Math.random() * 16;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.top = `${Math.random() * 85}%`;
+            particle.style.left = `${Math.random() * 90}%`;
+            particle.style.animationDuration = `${8 + Math.random() * 8}s`;
+            particle.style.animationDelay = `${Math.random() * 4}s`;
+
+            heroSection.appendChild(particle);
+        }
+    };
+
+    const animateHeroIntro = () => {
+        setTimeout(() => {
+            document.body.classList.add('hero-loaded');
+        }, 120);
+    };
+
+    createHeroParticles();
+    animateHeroIntro();
+
+    const tiltCards = document.querySelectorAll('.tech-config-card, .visualizer-card, .project-card, .skill-card');
 
     tiltCards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
@@ -91,11 +122,11 @@ document.addEventListener('DOMContentLoaded', () => {
             const centerY = rect.height / 2;
             
             // Calculate tilt degrees (max 10 degrees for cozy subtlety)
-            const rotateX = ((centerY - y) / centerY) * 8;
-            const rotateY = ((x - centerX) / centerX) * 8;
+            const rotateX = ((centerY - y) / centerY) * 6;
+            const rotateY = ((x - centerX) / centerX) * 6;
             
             // Apply fluid cozy transformations
-            card.style.transform = `perspective(1000px) translate3d(0px, -6px, 15px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            card.style.transform = `perspective(1000px) translate3d(0px, -6px, 12px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
             
             // Adjust the cozy diffused shadow angle based on cursor position
             const shadowX = rotateY * -1;
@@ -148,5 +179,5 @@ document.addEventListener('DOMContentLoaded', () => {
         typeEffect();
     }
     
-    console.log("%c⚡ JUST.ME Cozy Premium Editorial Engine loaded successfully! ⚡", "color: #c2693f; font-weight: bold; font-size: 14px;");
+    console.log("%c⚡ Portfolio Engine ready! ⚡", "color: #c2693f; font-weight: bold; font-size: 14px;");
 });
