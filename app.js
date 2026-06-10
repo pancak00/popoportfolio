@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- 6. Simulated Terminal Typing ---
-    const words = ["hi, welcome", "i'm just.me", "i tinker with code & sound", "enjoy your stay!"];
+    const words = ["hi, welcome", "i'm harold", "i mess with code & sound", "enjoy your stay!"];
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
