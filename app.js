@@ -13,46 +13,87 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Trigger immediately on load to set correct state
     
-    // --- 2. Mobile Menu Toggle ---
+    // --- 2. Scroll Progress Bar ---
+    const progressBar = document.createElement('div');
+    progressBar.className = 'scroll-progress';
+    document.body.appendChild(progressBar);
+
+    const updateProgress = () => {
+        const scrollTop = window.scrollY;
+        const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+        const scrollPercent = (scrollTop / docHeight) * 100;
+        progressBar.style.width = scrollPercent + '%';
+    };
+
+    window.addEventListener('scroll', updateProgress);
+
+    // --- 3. Mobile Menu Toggle ---
     const menuToggle = document.getElementById('mobile-menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const navLinks = document.querySelectorAll('.nav-link, .nav-btn');
+    const body = document.body;
     
     if (menuToggle && navMenu) {
-        menuToggle.addEventListener('click', () => {
+        const toggleMenu = () => {
             menuToggle.classList.toggle('active');
             navMenu.classList.toggle('active');
+            body.classList.toggle('no-scroll');
+        };
+
+        const closeMenu = () => {
+            menuToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            body.classList.remove('no-scroll');
+        };
+
+        menuToggle.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
         });
         
         // Close menu when clicking on nav links
         navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
-                navMenu.classList.remove('active');
-            });
+            link.addEventListener('click', closeMenu);
+        });
+
+        // Close menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+                closeMenu();
+            }
+        });
+
+        // Close menu on click outside
+        document.addEventListener('click', (e) => {
+            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target) && navMenu.classList.contains('active')) {
+                closeMenu();
+            }
         });
     }
     
-    // --- 3. Scroll Reveal (Intersection Observer) ---
+    // --- 4. Scroll Reveal (Intersection Observer) ---
     const revealElements = document.querySelectorAll('.scroll-reveal');
     
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                // Add a small random delay for organic feel
+                const delay = Math.random() * 0.2;
+                entry.target.style.transitionDelay = `${delay}s`;
                 entry.target.classList.add('revealed');
                 revealObserver.unobserve(entry.target);
             }
         });
     }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -40px 0px'
+        threshold: 0.1,
+        rootMargin: '0px 0px -30px 0px'
     });
     
     revealElements.forEach(el => {
         revealObserver.observe(el);
     });
     
-    // --- 4. Active Nav Link Highlighting on Scroll ---
+    // --- 5. Active Nav Link Highlighting on Scroll ---
     const sections = document.querySelectorAll('section[id]');
     
     const activeNavObserver = new IntersectionObserver((entries) => {
@@ -70,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.35,
+        threshold: 0.3,
         rootMargin: '-80px 0px -5% 0px'
     });
     
@@ -115,8 +156,8 @@ document.addEventListener('DOMContentLoaded', () => {
     tiltCards.forEach(card => {
         card.addEventListener('mousemove', (e) => {
             const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left; // Mouse x relative to card
-            const y = e.clientY - rect.top;  // Mouse y relative to card
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
             
             const centerX = rect.width / 2;
             const centerY = rect.height / 2;
@@ -128,20 +169,18 @@ document.addEventListener('DOMContentLoaded', () => {
             // Apply fluid cozy transformations
             card.style.transform = `perspective(1000px) translate3d(0px, -6px, 12px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
             
-            // Adjust the cozy diffused shadow angle based on cursor position
             const shadowX = rotateY * -1;
             const shadowY = (rotateX * 1) + 15;
             card.style.boxShadow = `${shadowX}px ${shadowY}px 35px rgba(35, 22, 12, 0.07)`;
         });
         
         card.addEventListener('mouseleave', () => {
-            // Reset transforms and clear inline styles to let index.css smoothly transitions back
             card.style.transform = 'perspective(1000px) translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg)';
             card.style.boxShadow = '';
         });
     });
 
-    // --- 6. Simulated Terminal Typing ---
+    // --- 7. Simulated Terminal Typing ---
     const words = ["hi, welcome", "i'm harold", "i mess with code & sound", "enjoy your stay!"];
     let wordIndex = 0;
     let charIndex = 0;
@@ -160,16 +199,14 @@ document.addEventListener('DOMContentLoaded', () => {
             
             typingTextSpan.textContent = currentWord.substring(0, charIndex);
             
-            let typeSpeed = isDeleting ? 35 : 70; // Smooth typing & deleting speeds
+            let typeSpeed = isDeleting ? 35 : 70;
             
             if (!isDeleting && charIndex === currentWord.length) {
-                // Pause at the end of the full word
                 typeSpeed = 1600;
                 isDeleting = true;
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 wordIndex = (wordIndex + 1) % words.length;
-                // Pause before typing next word
                 typeSpeed = 500;
             }
             

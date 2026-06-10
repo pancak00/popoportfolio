@@ -10,6 +10,15 @@
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
+    <!-- Skip to content (Accessibility) -->
+    <a href="#hero" class="skip-to-content">Skip to content</a>
+
+    <!-- Ambient Noise Texture Overlay -->
+    <div class="noise-overlay" aria-hidden="true"></div>
+
+    <!-- Ambient Floating Particles Canvas -->
+    <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
     <header class="header">
         <nav class="nav-container">
             <div class="logo">HSN</div>
@@ -32,10 +41,13 @@
         <section id="hero" class="hero-section">
             <div class="hero-bg-glow"></div>
             <div class="hero-content">
+                <div class="status-indicator">
+                    <span class="status-dot"></span> Available for freelance work
+                </div>
                 <h1 class="hero-title"><span class="gradient-text">i do<br>stuffs.</span></h1>
                 <p class="hero-subtitle">Developer? Sure. But also other things.</p>
                 <p class="hero-desc">
-                    I build computers, write code, and even play around with keyboards and music. I’m a hands-on problem solver who sometimes just needs a quick reset.
+                    I build computers, write code, and even play around with keyboards and music. I'm a hands-on problem solver who sometimes just needs a quick reset.
                 </p>
                 <div class="hero-actions">
                     <a href="#contact" class="btn btn-primary">Let's Connect</a>
@@ -104,10 +116,10 @@
             <div class="about-content">
                 <h2 class="section-title"><span class="gradient-text">My interests<br>have interests.</span></h2>
                 <p class="about-desc">
-                    I don’t just sit in front of a terminal all day. I’m usually the guy people call when their disk dies, their Hackintosh throws a tantrum, or they need someone to play guitar badly enough to settle for me.
+                    I don't just sit in front of a terminal all day. I'm usually the guy people call when their disk dies, their Hackintosh throws a tantrum, or they need someone to play guitar badly enough to settle for me.
                 </p>
                 <p class="about-desc">
-                    I build keyboards because I can’t stop tinkering, mess with Arduino because it’s cheaper than therapy, and write technical guides because someone has to suffer through documenting things. Oh, and I do music production too — mostly because silence makes me uncomfortable
+                    I build keyboards because I can't stop tinkering, mess with Arduino because it's cheaper than therapy, and write technical guides because someone has to suffer through documenting things. Oh, and I do music production too — mostly because silence makes me uncomfortable
                 </p>
             </div>
         </section>
@@ -125,7 +137,7 @@
                         <span class="skill-icon">🍎</span>
                     </div>
                     <h3 class="skill-title">Hackintoshing</h3>
-                    <p class="skill-text">It’s just macOS on non‑Apple hardware. Lots of bootloader fiddling, lots of patching, lots of sighing</p>
+                    <p class="skill-text">It's just macOS on non‑Apple hardware. Lots of bootloader fiddling, lots of patching, lots of sighing</p>
                 </div>
                 <!-- Skill 2 -->
                 <div class="skill-card scroll-reveal">
@@ -133,8 +145,7 @@
                         <span class="skill-icon">⌨️</span>
                     </div>
                     <h3 class="skill-title">Custom Keyboards</h3>
-                    <p class="skill-text">I spend way too much time lubing switches, soldering PCBs, and chasing some mythical ‘perfect sound’ 
-                        that probably doesn’t exist. All for the sake of typing a grocery list.</p>
+                    <p class="skill-text">I spend way too much time lubing switches, soldering PCBs, and chasing some mythical 'perfect sound' that probably doesn't exist. All for the sake of typing a grocery list.</p>
                 </div>
                 <!-- Skill 3 -->
                 <div class="skill-card scroll-reveal">
@@ -158,7 +169,7 @@
                         <span class="skill-icon">🖥️</span>
                     </div>
                     <h3 class="skill-title">PC Building</h3>
-                    <p class="skill-text"> “I build rigs that are way too optimized for tasks like… opening spreadsheets.</p>
+                    <p class="skill-text">"I build rigs that are way too optimized for tasks like… opening spreadsheets.</p>
                 </div>
                 <!-- Skill 6 -->
                 <div class="skill-card scroll-reveal">
@@ -174,8 +185,7 @@
                         <span class="skill-icon">🛠️</span>
                     </div>
                     <h3 class="skill-title">HW Troubleshooting</h3>
-                    <p class="skill-text">I poke at hardware until I figure out which part is dying, mostly so people don’t waste money replacing everything. 
-                        Basically, it’s tech guesswork with a fancy name.</p>
+                    <p class="skill-text">I poke at hardware until I figure out which part is dying, mostly so people don't waste money replacing everything. Basically, it's tech guesswork with a fancy name.</p>
                 </div>
                 <!-- Skill 8 -->
                 <div class="skill-card scroll-reveal">
@@ -183,7 +193,7 @@
                         <span class="skill-icon">💻</span>
                     </div>
                     <h3 class="skill-title">Software Dev</h3>
-                    <p class="skill-text">I stare at hardware until one part looks guilty, then call it diagnostics. Saves money, but mostly it’s just me guessing.</p>
+                    <p class="skill-text">I build web apps, automate the boring stuff, and ship code that mostly works. From full-stack experiments to CLI tools, I like making things that actually run.</p>
                 </div>
                 <!-- Skill 9 -->
                 <div class="skill-card scroll-reveal">
@@ -199,7 +209,7 @@
                         <span class="skill-icon">🔊</span>
                     </div>
                     <h3 class="skill-title">Sound Design</h3>
-                    <p class="skill-text">I try to sculpt audio atmospheres. Sometimes they’re rich, sometimes they just sound like a broken dishwasher.</p>
+                    <p class="skill-text">I try to sculpt audio atmospheres. Sometimes they're rich, sometimes they just sound like a broken dishwasher.</p>
                 </div>
                 <!-- Skill 11 -->
                 <div class="skill-card scroll-reveal">
@@ -207,8 +217,7 @@
                         <span class="skill-icon">🐙</span>
                     </div>
                     <h3 class="skill-title">GitHub Collaboration</h3>
-                    <p class="skill-text">I shuffle repositories around, set up automated CI/CD runs, 
-                        and enforce branching models that everyone ignores anyway. Basically, it’s project babysitting with Git</p>
+                    <p class="skill-text">I shuffle repositories around, set up automated CI/CD runs, and enforce branching models that everyone ignores anyway. Basically, it's project babysitting with Git</p>
                 </div>
                 <!-- Skill 12 -->
                 <div class="skill-card scroll-reveal">
@@ -218,7 +227,6 @@
                     <h3 class="skill-title">Technical Writing</h3>
                     <p class="skill-text">I make documentation sound crisp and friendly, which really means I add bullet points and hope people stop asking questions.</p>
                 </div>
-                </div>
             </div>
         </section>
 
@@ -226,7 +234,7 @@
         <section id="project-lab" class="projects-section">
             <div class="projects-header">
                 <h2 class="section-title text-center"><span class="gradient-text">The Project Lab</span></h2>
-                <p class="section-subtitle text-center">My so‑called ‘selected works’ bounce between half‑baked full‑stack experiments, questionable sound simulations, and medical support systems that somehow still function. Basically, it’s a grab bag of projects I pretend are impressive</p>
+                <p class="section-subtitle text-center">My so‑called 'selected works' bounce between half‑baked full‑stack experiments, questionable sound simulations, and medical support systems that somehow still function. Basically, it's a grab bag of projects I pretend are impressive</p>
             </div>
             <div class="projects-grid">
                 <!-- Project 1 -->
@@ -253,18 +261,18 @@
                         <div class="project-placeholder">
                             <div class="placeholder-icon">🪞</div>
                             <div class="recursive-title">PORTFOLIO-CEPTION</div>
-                            <p class="placeholder-text">You’re looking at my portfolio. It’s shiny, scrolls like a dream, and has more theme accents than a teenager’s bedroom wall</p>
+                            <p class="placeholder-text">You're looking at my portfolio. It's shiny, scrolls like a dream, and has more theme accents than a teenager's bedroom wall</p>
                         </div>
                     </div>
                     <div class="project-body">
                         <h3 class="project-title">This Portfolio</h3>
-                        <p class="project-desc">Yes, it’s modern. Yes, it’s glassy. And yes, it scrolls smoother than me trying to avoid responsibilities.</p>
+                        <p class="project-desc">Yes, it's modern. Yes, it's glassy. And yes, it scrolls smoother than me trying to avoid responsibilities.</p>
                         <div class="project-tags">
                             <span class="tag">HTML5</span>
                             <span class="tag">Vanilla CSS3</span>
                             <span class="tag">Node.js</span>
                         </div>
-                        <a href="#" class="project-link">Explore Codebase <span>→</span></a>
+                        <a href="#contact" class="project-link">Get in Touch <span>→</span></a>
                     </div>
                 </article>
 
@@ -275,8 +283,7 @@
                     </div>
                     <div class="project-body">
                         <h3 class="project-title">Addit '87</h3>
-                        <p class="project-desc">Addit ’87 is a retro‑styled terminal diary app inspired by the game The Lake. 
-                            It looks old‑school on the outside, but under the hood it’s all modern security.</p>
+                        <p class="project-desc">Addit '87 is a retro‑styled terminal diary app inspired by the game The Lake. It looks old‑school on the outside, but under the hood it's all modern security.</p>
                         <div class="project-tags">
                             <span class="tag">Terminal UI</span>
                             <span class="tag">Python</span>
@@ -292,8 +299,7 @@
                     </div>
                     <div class="project-body">
                         <h3 class="project-title">Retro Calculator</h3>
-                        <p class="project-desc">It’s just a clean, 
-                            retro‑looking calculator that does math really well and feels smooth to use.</p>
+                        <p class="project-desc">It's just a clean, retro‑looking calculator that does math really well and feels smooth to use.</p>
                         <div class="project-tags">
                             <span class="tag">JavaScript</span>
                             <span class="tag">CSS Grid</span>
@@ -310,7 +316,7 @@
                     </div>
                     <div class="project-body">
                         <h3 class="project-title">Pancak Simulation</h3>
-                        <p class="project-desc">I built a fake tape machine online. It wobbles, it saturates, it pretends to be vintage. Don’t ask me why.</p>
+                        <p class="project-desc">I built a fake tape machine online. It wobbles, it saturates, it pretends to be vintage. Don't ask me why.</p>
                         <div class="project-tags">
                             <span class="tag">Web Audio API</span>
                             <span class="tag">DSP</span>
@@ -328,7 +334,7 @@
             <div class="contact-content scroll-reveal">
                 <h2 class="section-title text-center">SAY <span class="gradient-text">WHATSUP</span></h2>
                 <p class="contact-subtitle text-center">
-                    I’m not the best at full‑stack, but I enjoy building things, messing with hardware, and fixing stuff when it breaks.
+                    I'm not the best at full‑stack, but I enjoy building things, messing with hardware, and fixing stuff when it breaks.
                 </p>
                 <div class="contact-actions">
                     <a href="mailto:stratstrat120@gmail.com" class="btn btn-primary">Hit Me Up</a>
@@ -343,6 +349,8 @@
             <p class="copyright">&copy; 2026 Harold's Lab // Built with passion and pure Vanilla CSS</p>
         </div>
     </footer>
+
+    <button class="back-to-top" id="back-to-top" aria-label="Back to top">↑</button>
 
     <script src="app.js"></script>
 </body>
