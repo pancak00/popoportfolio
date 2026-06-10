@@ -6,7 +6,8 @@
     <title>Harold's Lab</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;700;800;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet"></noscript>
     <link rel="stylesheet" href="index.css">
 </head>
 <body>
@@ -316,13 +317,34 @@
                     </div>
                     <div class="project-body">
                         <h3 class="project-title">Pancak Simulation</h3>
-                        <p class="project-desc">I built a fake tape machine online. It wobbles, it saturates, it pretends to be vintage. Don't ask me why.</p>
+                        <p class="project-desc">I built a fake tape machine online. It wobbles, 
+                            it saturates, it pretends to be vintage. Don't ask me why.</p>
                         <div class="project-tags">
                             <span class="tag">Web Audio API</span>
                             <span class="tag">DSP</span>
                             <span class="tag">Audio Synth</span>
                         </div>
                         <a href="https://pancak00.github.io/retrotapeplayer/" class="project-link">Play Tape <span>→</span></a>
+                    </div>
+                </article>
+
+
+                <!-- Project 6 -->
+                  <article class="project-card scroll-reveal">
+                    <div class="project-img-wrap">
+                        <img src="projects/weather boi.png" alt="Weather-Boi Screenshot" class="project-img">
+                    </div>
+                 <div class="project-body">
+                        <h3 class="project-title">Weather-Boi</h3>
+                        <p class="project-desc">A clean, aesthetic terminal dashboard written in Kotlin. 
+                            It queries free geocoding and forecast services to render real-time weather information and a 3-day forecast inside a colored terminal box accompanied by dynamic weather-related ASCII/Unicode art.</p>
+                        <div class="project-tags">
+                            <span class="tag">Kotlin 2.3</span>
+                            <span class="tag">Gradle 9.5</span>
+                            <span class="tag">Open-Meteo</span>
+                            <span class="tag">Cross-Platform</span>
+                        </div>
+                        <a href="https://github.com/pancak00/weather_boi" class="project-link">Run Weather-Boi <span>→</span></a>
                     </div>
                 </article>
             </div>

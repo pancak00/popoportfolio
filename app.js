@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
     
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll(); // Trigger immediately on load to set correct state
     
     // --- 2. Scroll Progress Bar ---
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         progressBar.style.width = scrollPercent + '%';
     };
 
-    window.addEventListener('scroll', updateProgress);
+    window.addEventListener('scroll', updateProgress, { passive: true });
 
     // --- 3. Mobile Menu Toggle ---
     const menuToggle = document.getElementById('mobile-menu-toggle');
@@ -119,13 +119,14 @@ document.addEventListener('DOMContentLoaded', () => {
         activeNavObserver.observe(section);
     });
 
-    // --- 5. Cozy Soft 3D Mouse Tilt Effect ---
+    // --- 5. Cozy Soft 3D Mouse Tilt Effect (Performance Optimized) ---
     const heroSection = document.querySelector('.hero-section');
 
     const createHeroParticles = () => {
         if (!heroSection) return;
 
         const particleCount = 12;
+        const fragment = document.createDocumentFragment();
         for (let i = 0; i < particleCount; i++) {
             const particle = document.createElement('span');
             particle.className = 'hero-particle';
@@ -138,8 +139,9 @@ document.addEventListener('DOMContentLoaded', () => {
             particle.style.animationDuration = `${8 + Math.random() * 8}s`;
             particle.style.animationDelay = `${Math.random() * 4}s`;
 
-            heroSection.appendChild(particle);
+            fragment.appendChild(particle);
         }
+        heroSection.appendChild(fragment);
     };
 
     const animateHeroIntro = () => {
@@ -153,32 +155,68 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const tiltCards = document.querySelectorAll('.tech-config-card, .visualizer-card, .project-card, .skill-card');
 
+    // Use requestAnimationFrame throttling to prevent layout thrashing
     tiltCards.forEach(card => {
+        let rafId = null;
+        let lastRect = null;
+        let isFirstMove = true;
+
         card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            // Calculate tilt degrees (max 10 degrees for cozy subtlety)
-            const rotateX = ((centerY - y) / centerY) * 6;
-            const rotateY = ((x - centerX) / centerX) * 6;
-            
-            // Apply fluid cozy transformations
-            card.style.transform = `perspective(1000px) translate3d(0px, -6px, 12px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-            
-            const shadowX = rotateY * -1;
-            const shadowY = (rotateX * 1) + 15;
-            card.style.boxShadow = `${shadowX}px ${shadowY}px 35px rgba(35, 22, 12, 0.07)`;
-        });
-        
+            if (rafId) return;
+
+            rafId = requestAnimationFrame(() => {
+                rafId = null;
+
+                // Cache getBoundingClientRect, only recalc if needed
+                if (isFirstMove || lastRect === null) {
+                    lastRect = card.getBoundingClientRect();
+                    isFirstMove = false;
+                }
+
+                const x = e.clientX - lastRect.left;
+                const y = e.clientY - lastRect.top;
+
+                const centerX = lastRect.width / 2;
+                const centerY = lastRect.height / 2;
+
+                // Calculate tilt degrees (max 6 degrees for cozy subtlety)
+                const rotateX = ((centerY - y) / centerY) * 6;
+                const rotateY = ((x - centerX) / centerX) * 6;
+
+                // Apply fluid cozy transformations
+                card.style.transform = `perspective(1000px) translate3d(0px, -6px, 12px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+
+                const shadowX = rotateY * -1;
+                const shadowY = (rotateX * 1) + 15;
+                card.style.boxShadow = `${shadowX}px ${shadowY}px 35px rgba(35, 22, 12, 0.07)`;
+            });
+        }, { passive: true });
+
         card.addEventListener('mouseleave', () => {
+            if (rafId) {
+                cancelAnimationFrame(rafId);
+                rafId = null;
+            }
+            isFirstMove = true;
+            lastRect = null;
             card.style.transform = 'perspective(1000px) translate3d(0, 0, 0) rotateX(0deg) rotateY(0deg)';
             card.style.boxShadow = '';
-        });
+        }, { passive: true });
     });
+
+    // --- 6. Pause off-screen animations for visualizer bars (Performance) ---
+    const aboutSection = document.querySelector('.about-section');
+    if (aboutSection && typeof IntersectionObserver !== 'undefined') {
+        const visualizerBarObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const bars = entry.target.querySelectorAll('.bar');
+                bars.forEach(bar => {
+                    bar.style.animationPlayState = entry.isIntersecting ? 'running' : 'paused';
+                });
+            });
+        }, { threshold: 0 });
+        visualizerBarObserver.observe(aboutSection);
+    }
 
     // --- 7. Simulated Terminal Typing ---
     const words = ["hi, welcome", "i'm harold", "i mess with code & sound", "enjoy your stay!"];
