@@ -10,36 +10,36 @@
 }
 
 :root {
-    /* Warm Editorial Cozy Palette */
-    --bg-darker: #fdfaf6; /* Warm Cream / Oat */
-    --bg-dark: #f6efe6; /* Latte Oatmeal */
-    --bg-card: #ffffff; /* Crisp White Paper */
+    /* Lofi Sage Green Light Palette */
+    --bg-darker: #faf8f3; /* Warm cream background */
+    --bg-dark: #f3ede5; /* Soft beige */
+    --bg-card: #ffffff; /* Pure white cards */
     
-    --text-primary: #23160c; /* Deep Espresso Cocoa */
-    --text-secondary: #5c4f43; /* Soft Almond Slate */
-    --text-muted: #96887a; /* Muted Sand */
+    --text-primary: #2d2d2d; /* Warm dark grey */
+    --text-secondary: #6b6b6b; /* Medium grey */
+    --text-muted: #a0a0a0; /* Light grey */
     
-    --color-primary: #23160c; /* Deep Espresso */
-    --color-secondary: #c2693f; /* Warm Terracotta Orange */
-    --color-accent: #3d8065; /* Calm Eucalyptus Sage Green */
-    --color-highlight: #d97706; /* Warm Amber */
+    --color-primary: #6b9080; /* Muted sage green */
+    --color-secondary: #7ba89b; /* Lighter sage green */
+    --color-accent: #c9a876; /* Warm tan/beige */
+    --color-highlight: #d4a574; /* Golden beige */
     
-    /* Code Palette (Cozy Paper Editor) */
-    --code-bg: #fdfaf6;
-    --code-key: #c2693f; /* Terracotta Orange keys */
-    --code-val: #3d8065; /* Sage Green values */
-    --code-comment: #96887a;
+    /* Code Palette */
+    --code-bg: #f3ede5;
+    --code-key: #7ba89b;
+    --code-val: #c9a876;
+    --code-comment: #a0a0a0;
     
     /* Font Collections */
     --font-heading: 'Lexend', sans-serif;
     --font-body: 'Inter', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
     
-    /* Soft Architecture Definitions */
-    --soft-border: 1px solid rgba(35, 22, 12, 0.1);
-    --soft-border-hover: 1px solid rgba(61, 128, 101, 0.2);
-    --cozy-shadow: 0 10px 30px rgba(35, 22, 12, 0.04);
-    --cozy-shadow-hover: 0 20px 40px rgba(61, 128, 101, 0.06);
+    /* Enhanced Shadows & Borders */
+    --soft-border: 1px solid rgba(107, 144, 128, 0.2);
+    --soft-border-hover: 1px solid rgba(107, 144, 128, 0.4);
+    --cozy-shadow: 0 15px 35px rgba(107, 144, 128, 0.06);
+    --cozy-shadow-hover: 0 25px 60px rgba(107, 144, 128, 0.12);
     
     /* Physics & Speeds */
     --transition-snappy: all 0.25s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -95,13 +95,13 @@ h1, h2, h3, h4 {
 }
 
 .section-title {
-    font-size: clamp(2.6rem, 5.5vw, 4rem);
+    font-size: clamp(2.2rem, 4.5vw, 3.3rem);
     margin-bottom: 1rem;
     letter-spacing: -0.04em;
 }
 
 .section-subtitle {
-    font-size: clamp(1.1rem, 2vw, 1.25rem);
+    font-size: clamp(0.95rem, 1.6vw, 1.08rem);
     color: var(--text-secondary);
     max-width: 650px;
     margin: 0 auto 4.5rem auto;
@@ -260,12 +260,12 @@ h1, h2, h3, h4 {
 /* 5. Hero Section */
 .hero-section {
     position: relative;
-    min-height: 100vh;
-    padding: 9rem 5% 4rem 5%;
+    min-height: 85vh;
+    padding: 6rem 5% 3rem 5%;
     display: grid;
     grid-template-columns: 1.2fr 1fr;
     align-items: center;
-    gap: 4rem;
+    gap: 3rem;
     max-width: 1200px;
     margin: 0 auto;
 }
@@ -289,14 +289,14 @@ h1, h2, h3, h4 {
 }
 
 .hero-title {
-    font-size: clamp(3.6rem, 8vw, 6rem);
+    font-size: clamp(2.8rem, 6vw, 4.5rem);
     margin-bottom: 1.2rem;
     letter-spacing: -0.04em;
 }
 
 .hero-subtitle {
     font-family: var(--font-heading);
-    font-size: clamp(1.4rem, 3.2vw, 2rem);
+    font-size: clamp(1.1rem, 2.4vw, 1.5rem);
     font-weight: 500;
     color: var(--color-secondary);
     margin-bottom: 1.2rem;
@@ -304,7 +304,7 @@ h1, h2, h3, h4 {
 }
 
 .hero-desc {
-    font-size: clamp(1.05rem, 1.8vw, 1.2rem);
+    font-size: clamp(0.9rem, 1.4vw, 1rem);
     color: var(--text-secondary);
     margin-bottom: 2.8rem;
     max-width: 550px;
@@ -400,11 +400,11 @@ h1, h2, h3, h4 {
 
 /* 6. About/Vibe Section */
 .about-section {
-    padding: 8rem 5%;
+    padding: 5rem 5%;
     display: grid;
     grid-template-columns: 1fr 1.2fr;
     align-items: center;
-    gap: 5rem;
+    gap: 4rem;
     max-width: 1200px;
     margin: 0 auto;
     border-top: var(--soft-border);
@@ -517,7 +517,7 @@ h1, h2, h3, h4 {
 
 /* 7. Skills Section */
 .skills-section {
-    padding: 8rem 5%;
+    padding: 4rem 5%;
     max-width: 1200px;
     margin: 0 auto;
     border-top: var(--soft-border);
@@ -525,47 +525,49 @@ h1, h2, h3, h4 {
 
 .skills-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2.2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
 }
 
 .skill-card {
     background: var(--bg-card);
     border: var(--soft-border);
-    padding: 2.2rem;
-    border-radius: 20px;
+    padding: 1.3rem;
+    border-radius: 16px;
     transition: var(--transition-smooth);
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     box-shadow: var(--cozy-shadow);
+    min-height: 200px;
 }
 
 .skill-icon-wrap {
-    width: 64px;
-    height: 64px;
+    width: 56px;
+    height: 56px;
     background: var(--bg-dark);
-    border-radius: 14px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 1.8rem;
+    margin-bottom: 1rem;
     transition: var(--transition-smooth);
 }
 
 .skill-icon {
-    font-size: 2rem;
+    font-size: 1.8rem;
 }
 
 .skill-title {
-    font-size: 1.35rem;
-    margin-bottom: 0.8rem;
+    font-size: 1rem;
+    margin-bottom: 0.6rem;
     letter-spacing: -0.02em;
 }
 
 .skill-text {
-    font-size: 0.95rem;
+    font-size: 0.8rem;
     color: var(--text-secondary);
+    line-height: 1.4;
 }
 
 /* Skill Card Hover (Green Touch) */
@@ -583,7 +585,7 @@ h1, h2, h3, h4 {
 
 /* 8. Projects Section */
 .projects-section {
-    padding: 8rem 5%;
+    padding: 4rem 5%;
     max-width: 1200px;
     margin: 0 auto;
     border-top: var(--soft-border);
@@ -662,13 +664,13 @@ h1, h2, h3, h4 {
 }
 
 .project-title {
-    font-size: 1.45rem;
+    font-size: 1.2rem;
     margin-bottom: 0.8rem;
     letter-spacing: -0.02em;
 }
 
 .project-desc {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
     margin-bottom: 1.8rem;
     flex-grow: 1;
@@ -728,7 +730,7 @@ h1, h2, h3, h4 {
 
 /* 9. Contact Section */
 .contact-section {
-    padding: 10rem 5%;
+    padding: 5rem 5%;
     max-width: 1200px;
     margin: 0 auto;
     position: relative;
@@ -751,7 +753,7 @@ h1, h2, h3, h4 {
     background: var(--bg-card);
     border: var(--soft-border);
     border-radius: 24px;
-    padding: 5rem 3rem;
+    padding: 3.5rem 2.5rem;
     text-align: center;
     max-width: 900px;
     margin: 0 auto;
