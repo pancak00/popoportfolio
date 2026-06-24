@@ -1,17 +1,5 @@
 {
   "installCommand": "npm install",
   "buildCommand": "npx vite build",
-  "outputDirectory": "dist",
-  "framework": null,
-  "functions": {
-    "dist/server/server.js": {
-      "runtime": "nodejs20.x"
-    }
-  },
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/"
-    }
-  ]
+  "framework": null
 }
